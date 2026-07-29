@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPP Slides - Raphaël Cassard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Force A4 Landscape normalization */
+        @page { size: 297mm 210mm; margin: 0; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #e2e8f0; 
+            margin: 0; 
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .slide {
+            position: relative;
+            width: 297mm;
+            height: 210mm;
+            background: white;
+            overflow: hidden; /* Empêche tout débordement */
+            page-break-after: always;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        @media print {
+            body { background: none; }
+            .slide-container { display: block; padding: 0; }
+            .slide { margin: 0; box-shadow: none; border: none; }
+            .no-print { display: none !important; }
+        }
+
+        /* Utility Components */
+        .pill-badge { @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider inline-block; }
+        .section-number { @apply absolute top-6 right-8 text-5xl font-black opacity-20 select-none; }
+        .grid-layout { @apply grid h-full w-full; }
+    </style>
+</head>
+<body>
+
+   
+
+    <div class="slide-container">
+<!-- 1-->
+        <div class="slide flex flex-col items-center justify-center bg-white relative overflow-hidden">
+            
+            <div class="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+            <div class="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+
+            <div class="z-10 text-center space-y-12">
+                
+                <div class="relative inline-block">
+                    <div class="w-72 h-72 rounded-full p-2 border-4 border-white shadow-2xl bg-slate-50">
+                         <img src="Cassard_Raphael_croise.jpg" class="w-full h-full rounded-full object-cover" alt="Raphaël Cassard">
+                    </div>
+                    <div class="absolute bottom-2 right-2 bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-black text-sm border-4 border-white shadow-lg">
+                        N7
+                    </div>
+                </div>
+
+                <div>
+                    <h1 class="text-8xl font-black text-slate-900 tracking-tighter mb-4 uppercase leading-none">
+                        Raphaël<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Cassard</span>
+                    </h1>
+                    
+                    <div class="w-24 h-1.5 bg-slate-200 mx-auto my-8 rounded-full"></div>
+
+                    <h2 class="text-3xl font-black text-slate-400 uppercase tracking-[0.2em]">
+                        Architecte Hardware
+                    </h2>
+                    <p class="text-sm font-bold text-slate-400 mt-2 tracking-widest uppercase opacity-70">
+                        InSys • Électronique & Signal
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!-- page 2 -->
+<div class="slide bg-slate-900 text-white p-16 relative">
+            <div class="section-number text-slate-700">02</div>
+            
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600 rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
+
+            <div class="grid grid-cols-2 gap-20 h-full items-center relative z-10">
+                
+                <div class="space-y-10 text-left">
+                    <div>
+                        <span class="text-blue-400 font-black text-xs uppercase tracking-widest border-b-4 border-blue-500 pb-2">Analyse Stratégique</span>
+                        
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="bg-slate-800/60 p-6 rounded-3xl border border-slate-700 backdrop-blur-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-black text-xs text-blue-400 uppercase tracking-widest">EU Chips Act</h4>
+                                <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">Souveraineté</span>
+                            </div>
+                            <p class="text-sm text-slate-300">Objectif de <strong>20% de part de marché mondiale</strong> pour l'Europe d'ici 2030. Relocalisation massive des fonderies (Crolles, Milan).</p>
+                        </div>
+
+                        <div class="bg-slate-800/60 p-6 rounded-3xl border border-slate-700 backdrop-blur-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-black text-xs text-green-400 uppercase tracking-widest">Attractivité</h4>
+                                <span class="bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded">Salaire Junior</span>
+                            </div>
+                            <p class="text-sm text-slate-300">Forte tension sur les recrutements Hardware. Salaire d'entrée moyen : <strong>38k€ - 42k€</strong> (France/Italie).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <span class="text-blue-400 font-black text-xs uppercase tracking-widest mb-8 text-center">Défis Industriels Majeurs</span>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-slate-800 p-8 rounded-3xl text-center border border-slate-700 hover:border-blue-500 transition-all group">
+                            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📈</div>
+                            <h4 class="font-black text-sm uppercase">Hyper-Croissance</h4>
+                            <p class="text-2xl font-black text-white mt-2">+15%</p>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">CAGR IoT</p>
+                        </div>
+
+                        <div class="bg-slate-800 p-8 rounded-3xl text-center border border-slate-700 hover:border-blue-500 transition-all group">
+                            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🚗</div>
+                            <h4 class="font-black text-sm uppercase">Software-Defined</h4>
+                            <p class="text-[10px] text-slate-300 mt-2 font-medium leading-tight">Transition vers des architectures centralisées (HPC) nécessitant des puces ultra-performantes.</p>
+                        </div>
+
+                        <div class="bg-slate-800 p-8 rounded-3xl text-center border border-slate-700 hover:border-blue-500 transition-all group">
+                            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📡</div>
+                            <h4 class="font-black text-sm uppercase">Mixed-Signal</h4>
+                            <p class="text-[10px] text-slate-300 mt-2 font-medium leading-tight">Explosion de la connectivité (5G/6G) : besoin d'intégrer RF analogique et traitement numérique.</p>
+                        </div>
+
+                        <div class="bg-slate-800 p-8 rounded-3xl text-center border border-slate-700 hover:border-red-500 transition-all group">
+                            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">⚠️</div>
+                            <h4 class="font-black text-sm uppercase text-red-400">Pénurie Critique</h4>
+                            <p class="text-[10px] text-slate-300 mt-2 font-medium leading-tight">Manque structurel d'ingénieurs maîtrisant la chaîne complète (Physique + FPGA).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3 -->
+<div class="slide p-12 bg-white flex flex-col">
+            <div class="section-number text-slate-200">03</div>
+            <h2 class="text-3xl font-black text-slate-900 mb-12 border-l-8 border-blue-600 pl-6 uppercase tracking-tight">Formation & Cohérence</h2>
+
+            <div class="relative flex-1 flex flex-col justify-center px-4 mb-8">
+                
+                <div class="absolute top-1/2 left-0 w-full h-2 bg-slate-100 rounded-full -z-10 transform -translate-y-1/2"></div>
+
+                <div class="grid grid-cols-3 gap-10 w-full">
+                    
+                    <div class="bg-white p-6 rounded-[2rem] border-2 border-slate-100 shadow-lg relative h-72 flex flex-col items-center justify-between group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute -top-4 bg-slate-200 text-slate-600 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">2022 - 2024</div>
+                        
+                        <div class="mt-4 text-center">
+                            <h4 class="font-black text-xl text-slate-900 mb-1">CPGE Poincaré</h4>
+                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Nancy • PC*</p>
+                        </div>
+
+                        <div class="w-full space-y-2">
+                            <div class="bg-slate-50 p-3 rounded-xl text-[10px] font-black text-slate-600 text-center uppercase tracking-tight border border-slate-100">
+                                Physique / Chimie
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl text-[10px] font-black text-slate-600 text-center uppercase tracking-tight border border-slate-100">
+                                Mathématiques
+                            </div>
+                        </div>
+
+                        <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500 text-xs shadow-inner">1</div>
+                    </div>
+
+                    <div class="bg-blue-600 p-6 rounded-[2.5rem] shadow-2xl relative h-80 flex flex-col items-center justify-between transform scale-110 border-4 border-white z-10">
+                        <div class="absolute -top-4 bg-slate-900 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">En Cours</div>
+                        
+                        <div class="mt-6 text-center">
+                            <h4 class="font-black text-2xl text-white mb-1">ENSEEIHT 3EA</h4>
+                            <p class="text-[10px] text-blue-200 font-black uppercase tracking-widest">Électronique</p>
+                        </div>
+
+                        <div class="w-full space-y-2">
+                            <div class="bg-blue-700 p-3 rounded-xl text-[10px] font-black text-white text-center uppercase tracking-tight border border-blue-500 shadow-sm">
+                                Électronique RF / UHF 
+                            </div>
+                            <div class="bg-blue-700 p-3 rounded-xl text-[10px] font-black text-white text-center uppercase tracking-tight border border-blue-500 shadow-sm">
+                                Traitement du Signal
+                            </div>
+                            <div class="bg-blue-700 p-3 rounded-xl text-[10px] font-black text-white text-center uppercase tracking-tight border border-blue-500 shadow-sm">
+                                Électronique numérique
+                            </div>
+                        </div>
+
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-blue-600 text-xs shadow-lg">2</div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-[2rem] border-2 border-blue-100 shadow-lg relative h-72 flex flex-col items-center justify-between group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute -top-4 bg-blue-100 text-blue-700 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">2026 - 2027</div>
+                        
+                        <div class="mt-4 text-center">
+                            <h4 class="font-black text-xl text-slate-900 mb-1">Option InSys</h4>
+                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Ingénierie Systèmes</p>
+                        </div>
+
+                        <div class="bg-blue-50 p-2 rounded-xl text-[10px] font-black text-blue-800 text-center uppercase tracking-tight border border-blue-100">
+    Techno FPGA & System On Chip
+</div>
+<div class="bg-blue-50 p-2 rounded-xl text-[10px] font-black text-blue-800 text-center uppercase tracking-tight border border-blue-100">
+    Hyperfréquences & Antennes
+</div>
+<div class="bg-blue-50 p-2 rounded-xl text-[10px] font-black text-blue-800 text-center uppercase tracking-tight border border-blue-100">
+    Du Silicium au Circuit Intégré
+</div>
+
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-xs shadow-inner">3</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-3xl p-6 border-l-8 border-slate-900 flex items-center justify-between shadow-sm">
+                <div>
+                    <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Adéquation Formation / Métier</h3>
+                    <p class="text-lg font-bold text-slate-800 leading-tight">
+                        Un parcours construit pour fusionner la <span class="text-blue-600">rigueur physique</span> (Prépa), le <span class="text-blue-600">socle électronique</span> (3EA) et l'<span class="text-blue-600">intelligence embarquée</span> (InSys).
+                    </p>
+                </div>
+                <div class="ml-8 text-right min-w-[200px]">
+    <p class="text-[10px] font-black text-slate-400 uppercase mb-1">Cible Professionnelle</p>
+    <div class="inline-block bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wide shadow-lg mb-2">
+        Architecte Hardware
+    </div>
+    <p class="text-[9px] font-black text-blue-600 uppercase tracking-widest">
+        Mixed-Signal (RF & Numérique)
+    </p>
+</div>
+            </div>
+
+        </div>
+<!-- Page 4-->
+        <div class="slide p-12 bg-white flex flex-col">
+            <div class="section-number text-slate-200">04</div>
+            <h2 class="text-3xl font-black text-slate-900 mb-10 border-l-8 border-blue-600 pl-6 uppercase">Mobilité & Durabilité</h2>
+
+            <div class="grid grid-cols-12 gap-10 h-[80%] items-stretch">
+                
+                <div class="col-span-8 space-y-8 flex flex-col justify-center">
+                    
+                    <div class="flex gap-8 p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm items-center group hover:border-blue-200 transition-colors">
+                        <div class="bg-white p-2 rounded-2xl border border-blue-100 flex items-center justify-center h-16 shadow-sm overflow-hidden">
+                         <img src="usfq-red.png" 
+                   alt="USFQ" class="h-full object-contain">
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-4 mb-3">
+                                <h4 class="font-black text-2xl text-slate-900 tracking-tighter uppercase">Été 2026 : Quito (USFQ)</h4>
+                                <span class="text-[10px] font-black text-white bg-blue-600 px-4 py-1.5 rounded-full tracking-widest uppercase shadow-lg shadow-blue-200">Stage Recherche</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed max-w-xl">
+                                <strong>Thématique :</strong> Électronique mixte ou UHF.
+                                <br><span class="text-xs text-slate-400 italic">(Sujet de recherche précis en cours de définition avec le Labo USFQ).</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-8 p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm items-center group hover:border-blue-200 transition-colors">
+                        <div class="bg-white p-2 rounded-2xl border border-blue-100 flex items-center justify-center h-16 shadow-sm overflow-hidden">
+                    <img src="Logo_Politecnico_Milano.png" 
+                        alt="Politecnico di Milano" class="h-full object-contain">
+                </div>
+                        <div>
+                            <div class="flex items-center gap-4 mb-3">
+                                <h4 class="font-black text-2xl text-slate-900 tracking-tighter uppercase">Automne 2026 : Milan (PoliMi)</h4>
+                                <span class="text-[10px] font-black text-slate-600 bg-slate-200 px-4 py-1.5 rounded-full tracking-widest uppercase italic">Erasmus</span>
+                            </div>
+                            <div class="space-y-2">
+
+                                <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1">
+                                 
+                                    <li><strong> Thématique :</strong> Conception Microélectronique & VLSI niveau transistor.</li>
+                                </ul>
+                                <p class="text-xs text-blue-600 font-bold mt-2">
+                                    Objectif : Maîtriser le design de puces au cœur de la "Silicon Valley" européenne.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-4 flex flex-col gap-8">
+                    
+                    <div class="bg-green-50 border-4 border-green-500 rounded-[3rem] p-10 text-center shadow-xl flex-1 flex flex-col justify-center transform hover:scale-[1.02] transition-transform">
+                        <p class="text-[11px] font-black text-green-800 uppercase mb-4 tracking-[0.2em]">Bilan Carbone</p>
+                        <div class="text-6xl font-black text-green-600 mb-2 leading-none tracking-tighter">3.65 T</div>
+                        <div class="text-[12px] font-black text-green-800 uppercase tracking-widest mb-10">CO2eq</div>
+                        <div>
+                            <span class="bg-green-600 text-white text-[11px] font-black px-6 py-3 rounded-full shadow-xl uppercase tracking-[0.1em] italic">
+                                Validé (< 6T)
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 flex flex-col justify-center shadow-sm">
+                        <h4 class="font-black text-xs text-slate-400 uppercase mb-6 tracking-widest text-center italic">Langues</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-xs font-black mb-2 uppercase"><span>Anglais</span> <span class="text-blue-600">B2+</span></div>
+                                <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden"><div class="bg-blue-600 w-[88%] h-full"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-black mb-2 uppercase"><span>Italien</span> <span class="text-slate-400 font-medium">Débutant (A2)</span></div>
+                                <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden"><div class="bg-slate-400 w-[25%] h-full"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Page 5-->
+        <div class="slide p-12 bg-white flex flex-col">
+            <div class="section-number text-slate-200">05</div>
+            <h2 class="text-3xl font-black text-slate-900 mb-14 border-l-8 border-blue-600 pl-6 uppercase tracking-tight">Engagement Associatif & Responsabilités</h2>
+
+            <div class="grid grid-cols-2 gap-12 h-[75%]">
+                
+                <div class="bg-slate-50 rounded-[3rem] p-10 border border-slate-200 flex flex-col shadow-sm relative overflow-hidden group hover:shadow-lg transition-all">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-blue-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                    
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-[1.2rem] flex items-center justify-center text-3xl mb-8 shadow-2xl shadow-blue-200">
+                            🗳️
+                        </div>
+                        <h3 class="font-black text-3xl text-slate-900 mb-2 tracking-tighter uppercase">Vice-Président</h3>
+                        <p class="text-sm font-black text-blue-600 uppercase tracking-widest mb-10">Leadership & Coordination</p>
+
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-5">
+                                <span class="text-3xl">👥</span>
+                                <div>
+                                    <h4 class="font-black text-slate-900 text-sm uppercase tracking-tight mb-1">Management d'Équipe</h4>
+                                    <p class="text-[12px] text-slate-600 leading-relaxed font-medium">
+                                        Coordination verticale d'une équipe de <strong>70 étudiants</strong>. Gestion des conflits, motivation des troupes et répartition stratégique des tâches.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-5">
+                                <span class="text-3xl">🎯</span>
+                                <div>
+                                    <h4 class="font-black text-slate-900 text-sm uppercase tracking-tight mb-1">Pilotage de Projet</h4>
+                                    <p class="text-[12px] text-slate-600 leading-relaxed font-medium">
+                                        Définition de la stratégie de campagne. Supervision globale du bon déroulement des projets et coordination avec les pôles (Trésorerie, Partenariats).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-[3rem] p-10 border border-slate-200 flex flex-col shadow-sm relative overflow-hidden group hover:shadow-lg transition-all">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-orange-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                    
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-16 h-16 bg-orange-500 text-white rounded-[1.2rem] flex items-center justify-center text-3xl mb-8 shadow-2xl shadow-orange-200">
+                            🍻
+                        </div>
+                        <h3 class="font-black text-3xl text-slate-900 mb-2 tracking-tighter uppercase">Resp. Afterworks</h3>
+                        <p class="text-sm font-black text-orange-600 uppercase tracking-widest mb-10">Logistique & Vie de Campus</p>
+
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-5">
+                                <span class="text-3xl">📅</span>
+                                <div>
+                                    <h4 class="font-black text-slate-900 text-sm uppercase tracking-tight mb-1">Rythme Hebdomadaire</h4>
+                                    <p class="text-[12px] text-slate-600 leading-relaxed font-medium">
+                                        Organisation complète d'un événement hebdomadaire. Gestion de la logistique du Foyer et de la restauration.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-5">
+                                <span class="text-3xl">🤝</span>
+                                <div>
+                                    <h4 class="font-black text-slate-900 text-sm uppercase tracking-tight mb-1">Support aux Clubs N7</h4>
+                                    <p class="text-[12px] text-slate-600 leading-relaxed font-medium">
+                                        Ces événements permettent de proposer des activités diverses(concerts, jeux) lors de chaque événement.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+<!-- Page 6-->
+ 
+<div class="slide bg-slate-900 text-white flex flex-col items-center justify-center p-20 relative overflow-hidden">
+            <div class="section-number text-slate-800">06</div>
+            
+            <div class="absolute w-full h-3 top-0 bg-gradient-to-r from-blue-600 via-blue-400 to-indigo-600"></div>
+            
+            <div class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600 rounded-full blur-[200px] opacity-10 pointer-events-none transform -translate-x-1/2 translate-y-1/2"></div>
+
+            <div class="relative z-10 w-full max-w-4xl text-center space-y-16">
+                
+                <div>
+                    <h2 class="text-6xl font-black mb-6 leading-tight tracking-tighter uppercase">
+                        MERCI DE VOTRE<br><span class="text-blue-500">ÉCOUTE</span>
+                    </h2>
+                    <p class="text-xl text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                        N'hésitez pas à poser des questions !
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-8 text-left max-w-3xl mx-auto border-t border-b border-slate-700 py-8">
+                    <div>
+                        <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Candidat</p>
+                        <p class="text-lg font-bold text-white">Raphaël Cassard</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Cible</p>
+                        <p class="text-lg font-bold text-white">Architecte Hardware</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Spécialité</p>
+                        <p class="text-lg font-bold text-white">InSys (Mixte & RF)</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center">
+                  
+                    
+                    <div class="flex items-center gap-8 bg-slate-800/50 p-6 rounded-[2rem] border border-slate-700 backdrop-blur-sm pr-12">
+                        <div class="bg-white w-24 h-24 rounded-2xl flex items-center justify-center text-slate-900 font-black text-xs shadow-2xl">
+                            QR CODE
+                        </div>
+                        <div class="text-left">
+                            <p class="text-3xl font-black text-white tracking-tighter mb-1">cass54.github.io</p>
+                            <p class="text-[10px] text-slate-400 font-medium">ePortfolio • CV • Projets Techniques</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- fin-->
+
+    </div>
+
+</body>
+</html>
