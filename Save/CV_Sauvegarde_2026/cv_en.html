@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV_CASSARD_RAPHAEL_EN</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+
+  <style>
+    :root {
+      --text-dark: #1E293B;
+      --text-muted: #475569;
+      --accent-blue: #1E3A8A;
+      --line-color: #334155;
+      --bg-page: #F8FAFC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-page);
+      line-height: 1.35;
+      font-size: 9.5pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print Control Bar */
+    .toolbar-bar {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 100;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      padding: 0.55rem 1.1rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background-color: #0F172A;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #334155;
+      border: 1px solid #CBD5E1;
+    }
+
+    .btn-secondary:hover {
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+
+    /* A4 Page Container */
+    .cv-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 1.2rem auto;
+      background: #ffffff;
+      padding: 7mm 12mm;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header Grid (QR Code | Center Info | Photo) */
+    .header-container {
+      display: grid;
+      grid-template-columns: 17% 66% 17%;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .header-left {
+      text-align: left;
+    }
+
+    .qr-img {
+      width: 1.85cm;
+      height: auto;
+      display: block;
+      border-radius: 3px;
+    }
+
+    .qr-caption {
+      font-size: 7pt;
+      font-weight: 700;
+      margin-top: 1px;
+      margin-left: 0.3cm;
+      color: var(--text-dark);
+    }
+
+    .header-center {
+      text-align: center;
+    }
+
+    .header-name {
+      font-size: 18.5pt;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .header-subtitle {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-top: 2px;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+
+    .header-contact {
+      font-size: 8.8pt;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .header-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .profile-photo {
+      width: 2.2cm;
+      height: 2.2cm;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid #E2E8F0;
+    }
+
+    /* Section Headers */
+    .section-block {
+      margin-top: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.1rem;
+    }
+
+    .section-rule {
+      border: none;
+      height: 0.75pt;
+      background-color: var(--line-color);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Lists and Items */
+    .cv-list {
+      list-style-type: none;
+      padding-left: 0.2cm;
+    }
+
+    .cv-item {
+      position: relative;
+      margin-bottom: 0.22rem;
+      padding-left: 0.7rem;
+    }
+
+    .cv-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      font-size: 10pt;
+      color: var(--text-dark);
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: var(--text-dark);
+    }
+
+    .item-date {
+      font-weight: 700;
+      font-size: 8.8pt;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dark);
+    }
+
+    .item-desc {
+      font-size: 8.8pt;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    /* Sublists */
+    .cv-sublist {
+      list-style-type: none;
+      padding-left: 0.35cm;
+      margin-top: 0.1rem;
+    }
+
+    .cv-subitem {
+      position: relative;
+      padding-left: 0.7rem;
+      font-size: 8.8pt;
+      color: var(--text-dark);
+      margin-bottom: 0.08rem;
+      line-height: 1.3;
+    }
+
+    .cv-subitem::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .inline-bold {
+      font-weight: 700;
+    }
+
+    /* Print Controls & 1-Page Layout Strict Enforcement */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 9.2pt;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .cv-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        margin: 0 !important;
+        padding: 6mm 10mm !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      a {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Control Bar (Hidden when printing/saving PDF) -->
+  <div class="toolbar-bar no-print">
+    <a href="index.html" class="btn-action btn-secondary">
+      <i class="ri-arrow-left-line"></i> Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="btn-action">
+      <i class="ri-printer-line"></i> Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- A4 CV Sheet Container -->
+  <main class="cv-page">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header-container">
+      <div class="header-left">
+        <a href="https://cass54.github.io/Portfolio-Cassard-Raphael/" target="_blank" title="View online portfolio" style="text-decoration: none; color: inherit; display: inline-block;">
+          <img src="qr-portfolio.png" alt="Portfolio QR Code" class="qr-img" />
+          <div class="qr-caption">Portfolio</div>
+          <div style="font-size: 6pt; font-weight: 700; color: #1E3A8A; text-decoration: underline; margin-top: 1px;">cass54.github.io</div>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <h1 class="header-name">Raphaël Cassard</h1>
+        <div class="header-subtitle">
+          MSc Student Engineer @ ENSEEIHT — RF Electronics, Antennas & Microwave Systems
+        </div>
+        <div class="header-contact">
+          Toulouse / Nancy, France &nbsp;|&nbsp; (+33) 6 22 03 99 61 &nbsp;|&nbsp; cassardraph@gmail.com &nbsp;|&nbsp; Driver's License
+        </div>
+      </div>
+
+      <div class="header-right">
+        <img src="Image1.png" alt="Raphaël Cassard" class="profile-photo" />
+      </div>
+    </header>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section class="section-block">
+      <h2 class="section-title">EDUCATION</h2>
+      <hr class="section-rule" />
+      <ul class="cv-list">
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">MSc Engineering Degree (SysCom: Telecommunications, RF & Antennas)</span>
+            <span class="item-date">Sep 2024 – Present</span>
+          </div>
+          <div class="item-desc">ENSEEIHT (Toulouse INP), France. Major in High-Frequency Electronics, RF Circuits & Antenna Design.</div>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Synopsys Bootcamp — ASIC Design & CPU Architecture (Verilog)</span>
+            <span class="item-date">Jul 2026</span>
+          </div>
+          <div class="item-desc">One-week intensive training: Synopsys EDA flow (Design Compiler, VCS, ICC2) & Verilog CPU/SRAM design.</div>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Intensive Preparatory Classes for Grandes Écoles (CPGE)</span>
+            <span class="item-date">Sep 2022 – Jul 2024</span>
+          </div>
+          <div class="item-desc">Lycée Henri Poincaré, Nancy, France. PCSI - PC* track: Intensive studies in Physics, Chemistry & Engineering.</div>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Scientific Baccalaureate (High School Diploma)</span>
+            <span class="item-date">2019 – 2022</span>
+          </div>
+          <div class="item-desc">Lycée Marquette, Pont-à-Mousson, France. Graduated with Highest Honors (Mention Très Bien).</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== PROFESSIONAL EXPERIENCES & INTERNSHIPS ==================== -->
+    <section class="section-block">
+      <h2 class="section-title">PROFESSIONAL EXPERIENCES & INTERNSHIPS</h2>
+      <hr class="section-rule" />
+      <ul class="cv-list">
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Research Intern — 4.0 GHz Antenna Design, CNC Prototyping & RF Testing</span>
+            <span class="item-date">Jun – Aug 2026</span>
+          </div>
+          <div class="item-desc">Universidad San Francisco de Quito (USFQ) — Cumbayá / Quito, Ecuador.</div>
+          <ul class="cv-sublist">
+            <li class="cv-subitem">Analytical modeling and 3D simulation in <span class="inline-bold">Ansys HFSS</span> of a wideband <span class="inline-bold">4.0 GHz</span> microstrip patch antenna (capacitive gap-coupling with parasitic resonator) on FR-4 for OFDM channels and SDR localization (ToA/AoA).</li>
+            <li class="cv-subitem">In-house rapid prototyping via <span class="inline-bold">3-axis CNC isolation milling</span> (<span class="inline-bold">KiCad</span>, <span class="inline-bold">FlatCAM</span>, chemical etching in FeCl₃, SMA soldering); successfully resolved machining offset across two prototyping iterations.</li>
+            <li class="cv-subitem">RF bench testing on Vector Network Analyzer (<span class="inline-bold">Rigol VNA</span>) & 2D radiation setup: measured <span class="inline-bold">370 MHz (9.25%)</span> -10 dB bandwidth (target &ge; 200 MHz, dual resonance at 3.96 & 4.22 GHz, FBR &gt; 14 dB).</li>
+          </ul>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Industrial Maintenance Mechanic</span>
+            <span class="item-date">Jun – Aug 2025</span>
+          </div>
+          <div class="item-desc">Rénovation Machines Industrielles (RMI), Nomeny and various industrial sites, France.</div>
+          <ul class="cv-sublist">
+            <li class="cv-subitem">Preventive maintenance and mechanical intervention on diverse industrial machinery fleets (in workshop and on-site).</li>
+            <li class="cv-subitem">Developed strong technical autonomy, rigor, and adaptability in demanding industrial environments.</li>
+          </ul>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Biomedical Maintenance Operator</span>
+            <span class="item-date">Aug – Sep 2023</span>
+          </div>
+          <div class="item-desc">Quipment, Nancy, France.</div>
+          <ul class="cv-sublist">
+            <li class="cv-subitem">Preventive maintenance, quality control, and configuration of medical devices according to clinical standards.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section-block">
+      <h2 class="section-title">PROJECTS</h2>
+      <hr class="section-rule" />
+      <ul class="cv-list">
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">5.2 GHz Microwave Amplifier & Radio Transmitter (ADS / Momentum)</span>
+            <span class="item-date">2026</span>
+          </div>
+          <div class="item-desc" style="color: var(--text-dark); margin-top: 1px;">
+            Complete design of a 5.2 GHz high-frequency amplifier for a radio transmitter. Component selection, impedance matching, RF PCB layout design, and electromagnetic simulation using Keysight ADS Momentum.
+          </div>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Mixed Cardiac Monitor (Analog & Digital)</span>
+            <span class="item-date">2025</span>
+          </div>
+          <div class="item-desc" style="color: var(--text-dark); margin-top: 1px;">
+            Creation of a complete ECG analysis system: design of the analog front-end (ECG signal amplification & active filtering), followed by digital processing in MATLAB for diagnosis.
+          </div>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">Real-Time Frequency Meter on FPGA Board (Artix-7)</span>
+            <span class="item-date">2025</span>
+          </div>
+          <div class="item-desc" style="color: var(--text-dark); margin-top: 1px;">
+            Design of a synchronous digital VHDL architecture on Artix-7 FPGA for real-time measurement and analysis of signals via native XADC converter under Vivado.
+          </div>
+        </li>
+        <li class="cv-item">
+          <div class="item-row">
+            <span class="item-title">RFID Badge Secured Lock & FM Audio Transmitter</span>
+            <span class="item-date">2024</span>
+          </div>
+          <div class="item-desc" style="color: var(--text-dark); margin-top: 1px;">
+            Development of contactless RFID access control on PIC18 microcontroller (Embedded C) / Sizing of an FM audio transmitter-receiver with VCO and PLL.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== SKILLS & TOOLS ==================== -->
+    <section class="section-block">
+      <h2 class="section-title">SKILLS & TOOLS</h2>
+      <hr class="section-rule" />
+      <ul class="cv-list">
+        <li class="cv-item">
+          <span class="inline-bold">Technical Domains:</span> RF Electronics, Antenna Design, Microwave Circuits, Analog & Digital Electronics, Telecoms & Signal Processing.
+        </li>
+        <li class="cv-item">
+          <span class="inline-bold">Software & EDA Tools:</span> Synopsys, ADS (RF & Momentum), Ansys HFSS, KiCad, FlatCAM, Orcad PSpice, Vivado, Quartus &nbsp;•&nbsp; <span class="inline-bold">Instruments:</span> VNA, Oscilloscopes &nbsp;•&nbsp; <span class="inline-bold">Languages:</span> VHDL, Verilog, C/C++, Python, MATLAB.
+        </li>
+        <li class="cv-item">
+          <span class="inline-bold">Soft Skills:</span> Leadership (70-member team coordination) &nbsp;•&nbsp; Social Skills & Team Player &nbsp;•&nbsp; Event Logistics &nbsp;•&nbsp; Technical Autonomy & Adaptability &nbsp;•&nbsp; Ethics & CSR.
+        </li>
+        <li class="cv-item">
+          <span class="inline-bold">Languages:</span> French (Native) &nbsp;•&nbsp; English (B2+ Certified Cambridge) &nbsp;•&nbsp; Italian (A2 - Intermediate).
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== COMMUNITY INVOLVEMENT & INTERESTS ==================== -->
+    <section class="section-block">
+      <h2 class="section-title">COMMUNITY INVOLVEMENT & INTERESTS</h2>
+      <hr class="section-rule" />
+      <ul class="cv-list">
+        <li class="cv-item">
+          <span class="inline-bold">Vice-President of Student List (2024 – 2025):</span> Coordination of a 70-member team, budget management (> €15k), and organization of major school events.
+        </li>
+        <li class="cv-item">
+          <span class="inline-bold">Afterwork Manager — ENSEEIHT Student Association (2025 – 2026):</span> Weekly event management and logistics for the student union bar ("Foyer").
+        </li>
+        <li class="cv-item">
+          <span class="inline-bold">Interests:</span> Competitive Swimming (Regional Level) &nbsp;•&nbsp; Electric Guitar (8 years of practice in solo and band settings).
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
