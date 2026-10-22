@@ -1,1159 +1,1263 @@
 <!doctype html>
 <html lang="fr" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raphaël Cassard | E-Portfolio Ingénieur SysCom</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
-    <!-- Remix Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
 
-    <style>
-      body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-      }
-      
-      .glass-nav {
-        background: rgba(255, 255, 255, 0.88);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raphaël Cassard | Élève-Ingénieur SysCom (RF & Antennes)</title>
 
-      .glass-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(226, 232, 240, 0.9);
-      }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-      .tab-content {
-        display: none;
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-      }
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-      .tab-content.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-      }
+  <!-- Remix Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
 
-      .nav-tab-btn.active {
-        color: #2563eb;
-        background-color: #eff6ff;
-        border-color: #bfdbfe;
-        font-weight: 700;
-      }
+  <style>
+    :root {
+      --bg-page: #FAFAFC;
+      --bg-card: #FFFFFF;
+      --border-subtle: #E5E7EB;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --accent-navy: #1E3A8A;
+    }
 
-      .hidden-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-      }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-      .show-content {
-        max-height: 400px;
-        opacity: 1;
-        margin-top: 1rem;
-      }
-    </style>
-  </head>
-  <body class="bg-[#F8FAFC] text-[#1E293B] antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+    .font-mono-num {
+      font-family: 'JetBrains Mono', monospace;
+    }
 
-    <!-- ==================== STICKY HEADER TABS ==================== -->
-    <header class="sticky top-0 z-50 glass-nav shadow-sm">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        
-        <!-- Brand Logo / Name -->
+    .nav-sticky {
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .card-clean {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.75rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-clean:hover {
+      border-color: #CBD5E1;
+    }
+
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-tab-btn {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.65rem 1rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--accent-navy);
+    }
+
+    .nav-tab-btn.active {
+      color: var(--accent-navy);
+      border-bottom-color: var(--accent-navy);
+    }
+
+    .tag-soft {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: #F1F5F9;
+      color: #1E293B;
+      border: 1px solid #E2E8F0;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.375rem;
+    }
+
+    .tag-navy {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: #EFF6FF;
+      color: #1E3A8A;
+      border: 1px solid #BFDBFE;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.375rem;
+    }
+
+    .hidden-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+    }
+
+    .show-content {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
+
+    .table-airy {
+      width: 100%;
+      font-size: 0.85rem;
+      border-collapse: collapse;
+    }
+
+    .table-airy th {
+      text-align: left;
+      font-weight: 700;
+      color: #475569;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid #E2E8F0;
+      background-color: #F8FAFC;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .table-airy td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+
+  <!-- ==================== HEADER & STICKY NAVIGATION ==================== -->
+  <header class="nav-sticky sticky top-0 z-50 shadow-xs">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <!-- Header Top Bar -->
+      <div class="flex items-center justify-between py-3 border-b border-slate-100">
+
+        <!-- Identity -->
         <a href="#welcome" onclick="switchTab('welcome')" class="flex items-center gap-3 group">
-          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white font-black text-lg transition-transform duration-300 group-hover:scale-105 shadow-md shadow-slate-900/10">
+          <div
+            class="h-10 w-10 bg-[#1E3A8A] text-white flex items-center justify-center font-bold text-base rounded-lg shadow-xs group-hover:bg-slate-900 transition-colors">
             RC
           </div>
           <div>
-            <span class="block font-extrabold text-slate-900 text-base leading-tight group-hover:text-blue-600 transition-colors">Raphaël Cassard</span>
-            <span class="block text-[11px] font-semibold text-blue-600">Élève Ingénieur SysCom @ ENSEEIHT</span>
+            <span
+              class="block font-bold text-slate-900 text-base leading-tight group-hover:text-[#1E3A8A] transition-colors">
+              Raphaël Cassard
+            </span>
+            <span class="block text-xs text-slate-500 font-medium">
+              Élève-Ingénieur SysCom @ ENSEEIHT (Toulouse INP)
+            </span>
           </div>
         </a>
 
-        <!-- Desktop Navigation Tabs -->
-        <nav class="hidden md:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60">
-          <button onclick="switchTab('welcome')" id="tab-btn-welcome" class="nav-tab-btn active flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-600 rounded-xl transition-all duration-200 hover:text-slate-900 hover:bg-white/60">
-            <i class="ri-home-4-line text-base"></i>
-            <span>Accueil</span>
-          </button>
-          
-          <button onclick="switchTab('education')" id="tab-btn-education" class="nav-tab-btn flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-600 rounded-xl transition-all duration-200 hover:text-slate-900 hover:bg-white/60">
-            <i class="ri-graduation-cap-line text-base"></i>
-            <span>Parcours</span>
-          </button>
-
-          <button onclick="switchTab('projects')" id="tab-btn-projects" class="nav-tab-btn flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-600 rounded-xl transition-all duration-200 hover:text-slate-900 hover:bg-white/60">
-            <i class="ri-signal-tower-line text-base"></i>
-            <span>Projets RF & HF</span>
-          </button>
-
-          <button onclick="switchTab('mobility')" id="tab-btn-mobility" class="nav-tab-btn flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-600 rounded-xl transition-all duration-200 hover:text-slate-900 hover:bg-white/60">
-            <i class="ri-global-line text-base"></i>
-            <span>Mobilité & Stage USFQ</span>
-          </button>
-
-          <button onclick="switchTab('ppp')" id="tab-btn-ppp" class="nav-tab-btn flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-600 rounded-xl transition-all duration-200 hover:text-slate-900 hover:bg-white/60">
-            <i class="ri-briefcase-4-line text-base"></i>
-            <span>Projet Pro & Secteurs</span>
-          </button>
-
-          <button onclick="switchTab('civic')" id="tab-btn-civic" class="nav-tab-btn flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-600 rounded-xl transition-all duration-200 hover:text-slate-900 hover:bg-white/60">
-            <i class="ri-user-heart-line text-base"></i>
-            <span>Engagements</span>
-          </button>
-        </nav>
-
-        <!-- Header Actions (CV, GitHub & LinkedIn) -->
-        <div class="hidden lg:flex items-center gap-2.5">
-          <a href="https://github.com/cass54" target="_blank" class="p-2 text-slate-700 bg-white border border-slate-200 rounded-xl shadow-xs hover:border-blue-400 hover:text-blue-600 transition-all text-sm">
-            <i class="ri-github-fill"></i>
+        <!-- Direct Actions & Documents -->
+        <div class="hidden sm:flex items-center gap-3 text-xs">
+          <a href="https://www.linkedin.com/in/raphael-cassard-b6224b32a" target="_blank" rel="noopener noreferrer"
+            class="p-2 text-slate-600 hover:text-[#1E3A8A] hover:bg-slate-100 rounded-lg transition-colors"
+            title="LinkedIn">
+            <i class="ri-linkedin-box-fill text-lg"></i>
           </a>
-          <a href="CV_FR_CASSARD_RAPHAEL.pdf" target="_blank" class="flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 rounded-xl shadow-xs hover:border-blue-400 hover:text-blue-600 transition-all">
+          <div class="h-4 w-px bg-slate-200 mx-1"></div>
+          <a href="CV_CASSARD_RAPHAEL_FR.pdf" download="CV_CASSARD_RAPHAEL_FR.pdf" target="_blank"
+            class="px-3 py-1.5 font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5">
             <span>🇫🇷</span> CV FR
           </a>
-          <a href="CV_EN_CASSARD_RAPHAEL.pdf" target="_blank" class="flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 rounded-xl shadow-xs hover:border-blue-400 hover:text-blue-600 transition-all">
+          <a href="CV_CASSARD_RAPHAEL_EN.pdf" download="CV_CASSARD_RAPHAEL_EN.pdf" target="_blank"
+            class="px-3 py-1.5 font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5">
             <span>🇬🇧</span> CV EN
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Toggle Navigation Menu">
-          <i class="ri-menu-3-line text-2xl" id="menu-icon"></i>
+        <!-- Mobile Toggle -->
+        <button onclick="toggleMobileMenu()" class="sm:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+          aria-label="Menu Mobile">
+          <i class="ri-menu-3-line text-xl" id="menu-icon"></i>
         </button>
       </div>
 
-      <!-- Mobile Navigation Drawer -->
-      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg">
-        <button onclick="switchTab('welcome'); toggleMobileMenu()" class="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-700 rounded-xl hover:bg-slate-50">
-          <i class="ri-home-4-line text-blue-600 text-lg"></i> Accueil
+      <!-- Navigation Tabs -->
+      <nav class="hidden sm:flex items-center gap-2 overflow-x-auto py-1">
+        <button onclick="switchTab('welcome')" id="tab-btn-welcome" class="nav-tab-btn active">
+          Overview
         </button>
-        <button onclick="switchTab('education'); toggleMobileMenu()" class="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-700 rounded-xl hover:bg-slate-50">
-          <i class="ri-graduation-cap-line text-blue-600 text-lg"></i> Parcours & Formations
+        <button onclick="switchTab('education')" id="tab-btn-education" class="nav-tab-btn">
+          Parcours & Formations
         </button>
-        <button onclick="switchTab('projects'); toggleMobileMenu()" class="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-700 rounded-xl hover:bg-slate-50">
-          <i class="ri-signal-tower-line text-blue-600 text-lg"></i> Projets RF & HF
+        <button onclick="switchTab('projects')" id="tab-btn-projects" class="nav-tab-btn">
+          Projets & Fiches Techniques
         </button>
-        <button onclick="switchTab('mobility'); toggleMobileMenu()" class="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-700 rounded-xl hover:bg-slate-50">
-          <i class="ri-global-line text-blue-600 text-lg"></i> Mobilité & Stage Équateur
+        <button onclick="switchTab('mobility')" id="tab-btn-mobility" class="nav-tab-btn">
+          Mobilité USFQ
         </button>
-        <button onclick="switchTab('ppp'); toggleMobileMenu()" class="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-700 rounded-xl hover:bg-slate-50">
-          <i class="ri-briefcase-4-line text-blue-600 text-lg"></i> Projet Pro & Secteurs
+        <button onclick="switchTab('ppp')" id="tab-btn-ppp" class="nav-tab-btn">
+          Projet Professionnel
         </button>
-        <button onclick="switchTab('civic'); toggleMobileMenu()" class="flex w-full items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-700 rounded-xl hover:bg-slate-50">
-          <i class="ri-user-heart-line text-blue-600 text-lg"></i> Engagements & Passions
+        <button onclick="switchTab('civic')" id="tab-btn-civic" class="nav-tab-btn">
+          Engagements & Contact
         </button>
-        <div class="pt-3 border-t border-slate-100 flex gap-2">
-          <a href="CV_FR_CASSARD_RAPHAEL.pdf" target="_blank" class="flex-1 text-center py-2.5 text-xs font-bold text-slate-800 bg-slate-100 rounded-xl">
-            🇫🇷 CV FR
-          </a>
-          <a href="CV_EN_CASSARD_RAPHAEL.pdf" target="_blank" class="flex-1 text-center py-2.5 text-xs font-bold text-slate-800 bg-slate-100 rounded-xl">
-            🇬🇧 CV EN
-          </a>
-        </div>
-      </div>
-    </header>
+      </nav>
 
-    <!-- ==================== MAIN CONTENT AREA ==================== -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    </div>
 
-      <!-- ==================== TAB 1: WELCOME (ACCUEIL) ==================== -->
-      <section id="content-welcome" class="tab-content active space-y-12">
-        
-        <!-- Hero Banner -->
-        <div class="relative overflow-hidden rounded-3xl bg-white border border-slate-200/80 p-8 md:p-12 shadow-sm">
-          <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl"></div>
-          <div class="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-indigo-500/5 blur-3xl"></div>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden sm:hidden border-t border-slate-200 bg-white px-4 py-3 space-y-1 shadow-md">
+      <button onclick="switchTab('welcome'); toggleMobileMenu()"
+        class="w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50">Overview</button>
+      <button onclick="switchTab('education'); toggleMobileMenu()"
+        class="w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50">Parcours &
+        Formations</button>
+      <button onclick="switchTab('projects'); toggleMobileMenu()"
+        class="w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50">Projets &
+        Fiches Techniques</button>
+      <button onclick="switchTab('mobility'); toggleMobileMenu()"
+        class="w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50">Mobilité
+        USFQ</button>
+      <button onclick="switchTab('ppp'); toggleMobileMenu()"
+        class="w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50">Projet
+        Professionnel</button>
+      <button onclick="switchTab('civic'); toggleMobileMenu()"
+        class="w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50">Engagements
+        & Contact</button>
+    </div>
+  </header>
 
-          <div class="relative flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-16">
-            
-            <div class="flex-1 text-center lg:text-left space-y-6">
-              <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
-                  <span class="h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
-                  M2 ENSEEIHT (Parcours SysCom)
-                </span>
-                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                  📍 Stage USFQ Quito, Équateur
-                </span>
-              </div>
+  <!-- ==================== MAIN CONTENT AREA ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-8 sm:px-6 lg:px-8 space-y-10">
 
-              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                Raphaël Cassard, <br />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">RF, Microwave &
-                  Antenna Engineering Student.</span>
-              </h1>
+    <!-- ==================== TAB 1: OVERVIEW ==================== -->
+    <section id="content-welcome" class="tab-content active space-y-10">
 
-              <p class="text-base sm:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto lg:mx-0">
-                Bonjour, je suis Raphaël, élève-ingénieur à l'<strong>ENSEEIHT</strong> (Toulouse INP) spécialisé en <strong>électronique haute fréquence</strong>, <strong>circuits RF</strong> et <strong>conception d'antennes</strong>. Actuellement en stage de recherche à l'<strong>USFQ</strong> (Équateur) sur la conception d'antennes et les télécommunications radio, je recherche une opportunité à forte valeur ajoutée en <strong>R&D Hardware RF</strong> pour début 2027.
-              </p>
+      <!-- Hero Card -->
+      <div class="card-clean p-6 sm:p-10">
+        <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
 
-              <!-- Actions & Contact Toggles -->
-              <div class="flex flex-col items-center lg:items-start gap-4 pt-2">
-                <div class="flex flex-wrap justify-center lg:justify-start gap-3">
-                  <button onclick="toggleVisibility('cv-options')" class="rounded-xl bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-600 flex items-center gap-2 shadow-md shadow-slate-900/10">
-                    <i class="ri-download-2-line"></i> Télécharger CV
-                    <i class="ri-arrow-down-s-line"></i>
-                  </button>
+          <!-- Left Info Block -->
+          <div class="flex-1 space-y-5 text-center sm:text-left">
 
-                  <button onclick="toggleVisibility('contact-info')" class="rounded-xl bg-slate-100 px-5 py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-200 border border-slate-200/80 flex items-center gap-2">
-                    <i class="ri-contacts-line"></i> Coordonnées & Fiche
-                  </button>
-
-                  <a href="https://github.com/cass54" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-slate-100 px-4 py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-200 border border-slate-200/80 flex items-center gap-2">
-                    <i class="ri-github-fill text-lg"></i> GitHub
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/raphael-cassard-b6224b32a" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-blue-50 px-4 py-3.5 text-sm font-semibold text-blue-600 transition-colors hover:bg-blue-100 border border-blue-100 flex items-center gap-2">
-                    <i class="ri-linkedin-box-fill text-lg"></i> LinkedIn
-                  </a>
-                </div>
-
-                <!-- CV Options Dropdown -->
-                <div id="cv-options" class="hidden-content flex flex-wrap gap-3">
-                  <a href="CV_FR_CASSARD_RAPHAEL.pdf" target="_blank" class="px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-bold hover:border-blue-400 hover:text-blue-600 transition-all shadow-xs flex items-center gap-2">
-                    <span>🇫🇷</span> CV Version Française (PDF)
-                  </a>
-                  <a href="CV_EN_CASSARD_RAPHAEL.pdf" target="_blank" class="px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-bold hover:border-blue-400 hover:text-blue-600 transition-all shadow-xs flex items-center gap-2">
-                    <span>🇬🇧</span> CV English Version (PDF)
-                  </a>
-                </div>
-
-                <!-- Contact Info Panel -->
-                <div id="contact-info" class="hidden-content w-full max-w-lg">
-                  <div class="glass-card p-5 rounded-2xl text-xs space-y-3 text-slate-700 shadow-sm border border-slate-200">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div class="flex items-center gap-2.5">
-                        <i class="ri-mail-line text-blue-600 text-base"></i>
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 uppercase block">Email Principal</span>
-                          <a href="mailto:cassardraph@gmail.com" class="font-semibold text-slate-900 hover:text-blue-600">cassardraph@gmail.com</a>
-                        </div>
-                      </div>
-                      <div class="flex items-center gap-2.5">
-                        <i class="ri-mail-send-line text-blue-600 text-base"></i>
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 uppercase block">Email Secondaire</span>
-                          <a href="mailto:cassard.raphael9@gmail.com" class="font-semibold text-slate-900 hover:text-blue-600">cassard.raphael9@gmail.com</a>
-                        </div>
-                      </div>
-                      <div class="flex items-center gap-2.5">
-                        <i class="ri-phone-line text-blue-600 text-base"></i>
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 uppercase block">Téléphone</span>
-                          <span class="font-semibold text-slate-900">06 22 03 99 61</span>
-                        </div>
-                      </div>
-                      <div class="flex items-center gap-2.5">
-                        <i class="ri-map-pin-line text-blue-600 text-base"></i>
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 uppercase block">Résidence / Mobilité</span>
-                          <span class="font-semibold text-slate-900">Toulouse (31000) • Permis B</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-2 text-[10px]">
-                      <span class="px-2 py-1 bg-slate-100 rounded-md font-bold text-slate-600">Nationalité : Française</span>
-                      <span class="px-2 py-1 bg-blue-50 rounded-md font-bold text-blue-700 border border-blue-100">Disponibilité Entretien : Immédiate</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Profile Image Container -->
-            <div class="relative w-full max-w-sm lg:max-w-md flex-1">
-              <div class="relative aspect-square rotate-2 overflow-hidden rounded-[2.5rem] border-4 border-white bg-slate-100 shadow-2xl shadow-slate-200/80 transition-transform duration-500 ease-out hover:rotate-0">
-                <img src="Cassard_Raphaël.jpg" alt="Raphaël Cassard" class="h-full w-full object-cover object-center scale-100" />
-              </div>
-              <div class="absolute inset-0 -z-10 scale-105 -rotate-3 rounded-[2.5rem] bg-gradient-to-tr from-blue-600/10 to-indigo-600/10"></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Technical Skill Domains Overview Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-            <div class="h-12 w-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold mb-4">
-              <i class="ri-signal-tower-line"></i>
-            </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-2">Design d'Antennes & EM</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">Conception & simulation sous <strong>ANSYS HFSS</strong> à 5.7 GHz (patch parasitaires gap-coupled, adaptation 1/4 d'onde, S11 &lt; -10 dB, BP 9.2%, cornet, guide à fente).</p>
-          </div>
-
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-            <div class="h-12 w-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold mb-4">
-              <i class="ri-rfid-line"></i>
-            </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-2">Circuits RF & Hyperfréquences</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">Simulation <strong>Keysight ADS (Momentum)</strong>, amplificateur MLA 5.2 GHz, abaque de Smith, adaptateurs d'impédance & CEM.</p>
-          </div>
-
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-            <div class="h-12 w-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl font-bold mb-4">
-              <i class="ri-radio-2-line"></i>
-            </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-2">Banc d'Essai SDR & Beamforming</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">Exploitation de testbenches <strong>SDR à 5.7 GHz</strong>, algorithmes ToA (Time of Arrival), transition bande ISM et préparation arrays d'antennes pour beamforming actif.</p>
-          </div>
-
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-            <div class="h-12 w-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold mb-4">
-              <i class="ri-hardware-chip-line"></i>
-            </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-2">FPGA & Design Numérique</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">Synthèse <strong>VHDL</strong> sous Vivado sur Artix-7 (XADC), CAO Synopsys, C/C++, Python & MATLAB / Simulink.</p>
-          </div>
-
-        </div>
-
-        <!-- Quick Jump to Highlights -->
-        <div class="rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 text-white p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div class="space-y-2 text-center md:text-left">
-            <h3 class="text-xl md:text-2xl font-bold">À la recherche d'une opportunité R&D Hardware RF / Antennes</h3>
-            <p class="text-xs md:text-sm text-slate-300">Entrée en M2 (2026-2027), disponible pour des projets à forte valeur ajoutée en conception RF, antennes et télécommunications.</p>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <button onclick="switchTab('projects')" class="px-5 py-3 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-500 transition-colors shadow-md">
-              Voir les Projets RF <i class="ri-arrow-right-line"></i>
-            </button>
-            <button onclick="switchTab('ppp')" class="px-5 py-3 rounded-xl bg-white/10 text-white font-bold text-xs hover:bg-white/20 transition-colors">
-              Métiers & Employeurs <i class="ri-briefcase-line"></i>
-            </button>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- ==================== TAB 2: EDUCATION & EXPERIENCE (PARCOURS) ==================== -->
-      <section id="content-education" class="tab-content space-y-8">
-        
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Cursus & Expériences</span>
-          <h2 class="text-3xl font-extrabold text-slate-900">Mon Parcours Académique & Pro</h2>
-          <p class="text-sm text-slate-500">De la prépa PC* aux circuits hyperfréquences, antennes et stages de recherche en laboratoire.</p>
-        </div>
-
-        <div class="max-w-4xl mx-auto space-y-8">
-          
-          <!-- ENSEEIHT Card -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6 mb-6">
-              <div class="flex items-center gap-4">
-                <div class="h-14 w-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl font-bold shadow-md shadow-blue-600/20">
-                  N7
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-slate-900">ENSEEIHT Toulouse (Toulouse INP)</h3>
-                  <p class="text-sm font-semibold text-blue-600">Diplôme d'Ingénieur CTI (Filière EEA - Majeure SysCom)</p>
-                </div>
-              </div>
-              <div class="text-right">
-                <span class="text-xs font-extrabold text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">
-                  Diplômation 2027 (M1 validé, M2 2026-2027)
-                </span>
-              </div>
-            </div>
-
-            <div class="space-y-4 text-sm leading-relaxed text-slate-600">
-              <p>
-                Majeure <strong>SysCom (Systèmes Communicants)</strong> au sein du département 3EA. Formation d'ingénieurs experts de la chaîne globale des télécommunications et systèmes intelligents, couvrant les <strong>circuits haute fréquence (RF)</strong>, la <strong>propagation & antennes</strong>, les <strong>systèmes embarqués communicants (IoT, FPGA)</strong> et le <strong>traitement du signal</strong> pour l'aéronautique, le spatial et les télécoms.
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2">
-                  <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-2">
-                    <i class="ri-book-read-line text-blue-600"></i> Cours Pertinents & Spécialités
-                  </h4>
-                  <ul class="text-xs space-y-1.5 text-slate-600">
-                    <li>• Systèmes hautes fréquences embarqués</li>
-                    <li>• Circuits hyperfréquences et CEM</li>
-                    <li>• Phénomènes liés à la propagation & OEM</li>
-                    <li>• Circuits RF & Adaptateurs Smith</li>
-                    <li>• Systèmes Nanosatellites & Spatial</li>
-                  </ul>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 space-y-2">
-                  <h4 class="font-bold text-blue-900 text-xs uppercase tracking-wider flex items-center gap-2">
-                    <i class="ri-tools-line text-blue-600"></i> Logiciels & Outils de CAO RF
-                  </h4>
-                  <p class="text-xs text-slate-600">
-                    Pratique quotidienne d'<strong>ANSYS HFSS</strong>, <strong>Keysight ADS (Momentum)</strong>, <strong>Xilinx Vivado (VHDL)</strong>, <strong>Orcad PSpice</strong>, <strong>KiCad</strong> et <strong>Synopsys</strong>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lycée Poincaré Card -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6 mb-6">
-              <div class="flex items-center gap-4">
-                <div class="h-14 w-14 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl font-bold shadow-md shadow-slate-900/10">
-                  LP
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-slate-900">Lycée Henri Poincaré, Nancy</h3>
-                  <p class="text-sm font-semibold text-slate-600">Classes Préparatoires aux Grandes Écoles (CPGE)</p>
-                </div>
-              </div>
-              <span class="self-start md:self-center text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full uppercase tracking-wider">
-                2022 - 2024
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              <span class="tag-navy">
+                <span class="h-2 w-2 rounded-full bg-[#1E3A8A] mr-1.5 animate-pulse"></span>
+                M2 ENSEEIHT (Parcours SysCom)
+              </span>
+              <span class="tag-soft">
+                📍 Stage USFQ Quito, Équateur
               </span>
             </div>
 
-            <div class="space-y-4 text-sm text-slate-600">
-              <div class="relative pl-6 border-l-2 border-slate-200 space-y-6">
-                <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="text-xs font-bold text-slate-900 uppercase">2023 - 2024</span>
-                    <span class="text-[10px] font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100">PC* (Physique-Chimie Étoile)</span>
-                  </div>
-                  <p class="text-xs text-slate-500">Classe préparatoire de niveau avancé. Rigueur mathématique, modélisation physique et préparation intensive aux concours des Grandes Écoles.</p>
-                </div>
+            <div>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Raphaël Cassard
+              </h1>
+              <p class="text-lg font-semibold text-[#1E3A8A] mt-1">
+                RF, Microwave & Antenna Engineering Student
+              </p>
+            </div>
 
-                <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="text-xs font-bold text-slate-900 uppercase">2022 - 2023</span>
-                    <span class="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md">PCSI</span>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+              Bonjour, je suis Raphaël, élève-ingénieur à l'<strong>ENSEEIHT</strong> (Toulouse INP) spécialisé en
+              <strong>électronique haute fréquence</strong>, <strong>circuits RF</strong> et <strong>conception
+                d'antennes</strong>. Actuellement en stage de recherche à l'<strong>USFQ</strong> (Équateur) sur la
+              conception d'antennes et les télécommunications radio, je recherche une opportunité à forte valeur ajoutée
+              en <strong>R&D Hardware RF</strong> pour début <span class="font-mono-num font-semibold">2027</span>.
+            </p>
+
+            <!-- Actions & Buttons -->
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-2">
+
+              <button onclick="toggleVisibility('cv-dropdown')"
+                class="px-5 py-3 rounded-lg bg-[#1E3A8A] text-white text-sm font-semibold hover:bg-slate-900 transition-colors flex items-center gap-2 shadow-xs">
+                <i class="ri-download-2-line"></i> Télécharger CV (PDF)
+                <i class="ri-arrow-down-s-line text-xs"></i>
+              </button>
+
+              <button onclick="toggleVisibility('contact-panel')"
+                class="px-5 py-3 rounded-lg bg-white border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-50 transition-colors flex items-center gap-2">
+                <i class="ri-contacts-line"></i> Coordonnées & Fiche
+              </button>
+
+
+              <a href="https://www.linkedin.com/in/raphael-cassard-b6224b32a" target="_blank" rel="noopener noreferrer"
+                class="p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 transition-colors"
+                title="LinkedIn">
+                <i class="ri-linkedin-box-fill text-lg"></i>
+              </a>
+
+            </div>
+
+            <!-- CV Dropdown Panel -->
+            <div id="cv-dropdown" class="hidden-content flex flex-wrap gap-2.5">
+              <a href="CV_CASSARD_RAPHAEL_FR.pdf" target="_blank"
+                class="px-3.5 py-2 bg-blue-50 border border-blue-200 rounded-lg text-xs font-semibold text-[#1E3A8A] hover:bg-blue-100 transition-all flex items-center gap-1.5">
+                <i class="ri-file-pdf-2-line"></i> 🇫🇷 CV FR (PDF)
+              </a>
+              <a href="CV_CASSARD_RAPHAEL_EN.pdf" target="_blank"
+                class="px-3.5 py-2 bg-blue-50 border border-blue-200 rounded-lg text-xs font-semibold text-[#1E3A8A] hover:bg-blue-100 transition-all flex items-center gap-1.5">
+                <i class="ri-file-pdf-2-line"></i> 🇬🇧 CV EN (PDF)
+              </a>
+              <a href="cv.html" target="_blank"
+                class="px-3.5 py-2 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-all flex items-center gap-1.5">
+                <i class="ri-layout-line"></i> Version Web
+              </a>
+            </div>
+
+            <!-- Contact Information Panel -->
+            <div id="contact-panel" class="hidden-content">
+              <div class="p-5 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-3 text-slate-700">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <span class="text-slate-400 font-bold block uppercase text-[10px]">Email</span>
+                    <a href="mailto:cassardraph@gmail.com"
+                      class="font-semibold text-slate-900 hover:text-blue-600">cassardraph@gmail.com</a>
                   </div>
-                  <p class="text-xs text-slate-500">Bases solides en Physique, Chimie et Sciences de l'Ingénieur. *Baccalauréat Scientifique Mention Très Bien en 2022*.</p>
+                  <div>
+                    <span class="text-slate-400 font-bold block uppercase text-[10px]">Téléphone</span>
+                    <span class="font-semibold text-slate-900 font-mono-num">06 22 03 99 61</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-400 font-bold block uppercase text-[10px]">Résidence / Permis</span>
+                    <span class="font-semibold text-slate-900">Toulouse (<span class="font-mono-num">31000</span>) •
+                      Permis B</span>
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-slate-200 flex flex-wrap gap-2 text-[11px]">
+                  <span class="font-semibold text-slate-600">Nationalité : Française</span>
+                  <span class="text-blue-700 font-semibold">• Disponibilité Entretien : Immédiate</span>
                 </div>
               </div>
             </div>
+
           </div>
 
-          <!-- Professional Experiences List -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-6">
-            <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4">
-              Expériences Professionnelles & Stages
-            </h3>
+          <!-- Profile Photo Container -->
+          <div class="w-48 sm:w-56 shrink-0">
+            <div class="relative">
+              <img src="Cassard_Raphaël.jpg" alt="Raphaël Cassard"
+                class="w-full h-auto object-cover rounded-xl border border-slate-200 shadow-md" />
+            </div>
+          </div>
 
-            <div class="space-y-6">
-              
-              <!-- Exp 1: USFQ -->
-              <div class="relative pl-6 border-l-2 border-blue-600 space-y-2">
-                <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white bg-blue-600 shadow-xs"></div>
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                  <h4 class="font-bold text-slate-900 text-base">Stagiaire Recherche — 5.7 GHz SDR Testbench, Design d'Antennes & Beamforming</h4>
-                  <span class="text-[10px] font-extrabold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">Juin – Août 2026</span>
-                </div>
-                <p class="text-xs font-semibold text-blue-600">Universidad San Francisco de Quito (USFQ) — Cumbayá / Quito, Équateur</p>
-                <ul class="text-xs text-slate-600 space-y-1.5 pt-1">
-                  <li>• <strong>Migration vers la bande ISM 5.7 GHz :</strong> Adaptation de la plateforme de géolocalisation 5G ToA (Time of Arrival) vers la bande libre 5.7 GHz pour s'affranchir des licences d'expérimentation campus.</li>
-                  <li>• <strong>Design d'antennes directives sous ANSYS HFSS :</strong> Conception d'antennes microstrip directives 5.7 GHz à couplage de fente/parasitaire pour élargir la bande passante (BP de 9.2%, S11 &lt; -10 dB, adaptation 1/4 d'onde).</li>
-                  <li>• <strong>Testbench SDR & Multi-User MIMO :</strong> Exploitation du banc d'essai SDR pour le test de résistance à longue distance, l'interconnexion multi-utilisateurs et la préparation de réseaux d'antennes pour le beamforming actif et le RF Fingerprinting.</li>
+        </div>
+      </div>
+
+      <!-- Technical Modules Overview Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="card-clean p-6 space-y-3">
+          <div
+            class="h-10 w-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center text-xl font-bold">
+            <i class="ri-signal-tower-line"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Antennes & Électromagnétisme</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Conception et simulation 3D sous <strong>ANSYS HFSS</strong> (<span class="font-mono-num">4.0 GHz</span> & <span class="font-mono-num">10 GHz</span>).
+            Patchs large bande, antennes cornet et modélisation par schémas équivalents.
+          </p>
+        </div>
+
+        <div class="card-clean p-6 space-y-3">
+          <div
+            class="h-10 w-10 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl font-bold">
+            <i class="ri-rfid-line"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Circuits RF & Hyperfréquences</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Simulation <strong>Keysight ADS Momentum</strong>, amplificateur micro-onde <span class="font-mono-num">5.2
+              GHz</span>, adaptation d'impédance abaque de Smith & co-simulation layout microruban.
+          </p>
+        </div>
+
+        <div class="card-clean p-6 space-y-3">
+          <div
+            class="h-10 w-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center text-xl font-bold">
+            <i class="ri-radio-2-line"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Testbench SDR & Mesures RF</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Banc d'essai <strong>SDR à <span class="font-mono-num">4.0 GHz</span></strong>, caractérisation vectorielle VNA (S11), usinage CNC et banc motorisé 2D de diagrammes de rayonnement.
+          </p>
+        </div>
+
+        <div class="card-clean p-6 space-y-3">
+          <div
+            class="h-10 w-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl font-bold">
+            <i class="ri-hardware-chip-line"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Électronique RF & Modélisation</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Liaison FM optoélectronique sous <strong>PSpice</strong> (VCO, PLL, cascode sélectif), modélisation <strong>MATLAB</strong>, suite Synopsys & programmation C/Python.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 2: PARCOURS & FORMATIONS ==================== -->
+    <section id="content-education" class="tab-content space-y-8">
+
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">Parcours Académique & Expériences</h2>
+        <p class="text-xs text-slate-500">De la classe préparatoire PC* à la spécialisation SysCom et aux stages de
+          recherche.</p>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- ENSEEIHT Academic Card -->
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">ENSEEIHT Toulouse (Toulouse INP)</h3>
+              <p class="text-sm font-semibold text-[#1E3A8A]">Diplôme d'Ingénieur CTI — Filière EEA (Électronique,
+                Énergie Électrique, Automatique)</p>
+            </div>
+            <span class="tag-navy self-start sm:self-center">
+              Diplômation <span class="font-mono-num ml-1">2027</span> (M2 <span
+                class="font-mono-num ml-1">2026-2027</span>)
+            </span>
+          </div>
+
+          <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p>
+              Majeure <strong>SysCom (Systèmes Communicants)</strong> au sein du département 3EA. Formation d'ingénieurs
+              experts de la chaîne globale des télécommunications et systèmes intelligents, couvrant les
+              <strong>circuits haute fréquence (RF)</strong>, la <strong>propagation & antennes</strong>, les
+              <strong>systèmes embarqués communicants (IoT, FPGA)</strong> et le <strong>traitement du signal</strong>
+              pour l'aéronautique, le spatial et les télécoms.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
+                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-2">
+                  <i class="ri-book-read-line text-[#1E3A8A]"></i> Enseignements Principaux
+                </h4>
+                <ul class="text-xs space-y-1 text-slate-600">
+                  <li>• Antennes planaires & ouvertures rayonnantes (Cornet, Patch)</li>
+                  <li>• Circuits hyperfréquences, MMIC & MEMS</li>
+                  <li>• Modélisation électromagnétique de structures guidantes</li>
+                  <li>• Systèmes hautes fréquences embarqués & CEM</li>
+                  <li>• Phénomènes liés à la propagation & OEM</li>
+                  <li>• Systèmes Nanosatellites & Télécoms spatiales</li>
                 </ul>
-                <div class="flex flex-wrap gap-1.5 pt-2">
-                  <span class="px-2 py-0.5 bg-slate-100 text-[10px] font-bold text-slate-700 rounded-md">ANSYS HFSS 3D</span>
-                  <span class="px-2 py-0.5 bg-slate-100 text-[10px] font-bold text-slate-700 rounded-md">5.7 GHz ISM Band</span>
-                  <span class="px-2 py-0.5 bg-slate-100 text-[10px] font-bold text-slate-700 rounded-md">SDR Testbench</span>
-                  <span class="px-2 py-0.5 bg-slate-100 text-[10px] font-bold text-slate-700 rounded-md">ToA & Beamforming</span>
-                </div>
               </div>
 
-              <!-- Exp 2: RMI -->
-              <div class="relative pl-6 border-l-2 border-slate-200 space-y-2">
-                <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white bg-slate-300 shadow-xs"></div>
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                  <h4 class="font-bold text-slate-900 text-sm">Mécanicien de Maintenance Industrielle</h4>
-                  <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">Juin – Août 2025</span>
-                </div>
-                <p class="text-xs font-semibold text-slate-500">Rénovation Machines Industrielles (RMI) — Nomeny & France</p>
-                <p class="text-xs text-slate-600">Autonomie technique, adaptabilité sur le terrain et rigueur en environnement industriel contraint.</p>
+              <div class="p-4 bg-blue-50/50 rounded-lg border border-blue-100 space-y-2">
+                <h4 class="font-bold text-[#1E3A8A] text-xs uppercase tracking-wider flex items-center gap-2">
+                  <i class="ri-tools-line"></i> Logiciels & CAO RF Pratiqués
+                </h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Pratique d'<strong>ANSYS HFSS</strong>, <strong>Keysight ADS (Momentum)</strong>, <strong>Xilinx
+                    Vivado (VHDL)</strong>, <strong>Orcad PSpice</strong>, <strong>MPLAB</strong>,
+                  <strong>MATLAB</strong> et <strong>Code::Blocks (C/C++)</strong>.
+                </p>
               </div>
-
-              <!-- Exp 3: Quipment -->
-              <div class="relative pl-6 border-l-2 border-slate-200 space-y-2">
-                <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white bg-slate-300 shadow-xs"></div>
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                  <h4 class="font-bold text-slate-900 text-sm">Opérateur de Maintenance Biomédicale</h4>
-                  <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">Août – Sept 2023</span>
-                </div>
-                <p class="text-xs font-semibold text-slate-500">Quipment — Nancy, France</p>
-                <p class="text-xs text-slate-600">Respect strict des normes cliniques biomédicales et processus de qualification rigoureux.</p>
-              </div>
-
             </div>
           </div>
-
         </div>
 
-      </section>
+        <!-- Synopsys Bootcamp Card -->
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="h-10 w-10 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-lg">
+                <i class="ri-cpu-line"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">Bootcamp Synopsys — Conception & Design de Puces (ASIC)
+                </h3>
+                <p class="text-sm font-semibold text-[#1E3A8A]">Design Mini-CPU + SRAM en Verilog & Flow de Synthèse/PnR
+                  Synopsys</p>
+              </div>
+            </div>
+            <span class="tag-navy self-start sm:self-center font-mono-num">
+              Juillet 2026
+            </span>
+          </div>
 
-      <!-- ==================== TAB 3: PROJECTS (PROJETS RF & HF) ==================== -->
-      <section id="content-projects" class="tab-content space-y-8">
-        
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Réalisations Technologiques</span>
-          <h2 class="text-3xl font-extrabold text-slate-900">Projets RF, Antennes & Micro-ondes</h2>
-          <p class="text-sm text-slate-500">Simulations électromagnétiques HFSS, circuits hyperfréquences ADS, antennes et systèmes FPGA.</p>
+          <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p>
+              Projet de conception intégrale d'un <strong>mini-processeur (CPU) relié à une mémoire SRAM</strong>.
+              Rédaction par nous-mêmes de l'ensemble des <strong>codes Verilog</strong> de l'architecture, puis
+              immersion sur le flow de conception ASIC complet via la suite <strong>Synopsys</strong> avec analyse
+              approfondie des rapports de synthèse et de contraintes physiques.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+              <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5">
+                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="ri-code-s-slash-line text-[#1E3A8A]"></i> Design Verilog & VCS
+                </h4>
+                <p class="text-xs text-slate-600">
+                  Écriture des modules <strong>Verilog</strong> (CPU & interface SRAM), rédaction des testbenches et
+                  simulation RTL sous <strong>VCS</strong>.
+                </p>
+              </div>
+
+              <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5">
+                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="ri-settings-4-line text-[#1E3A8A]"></i> Synthèse & Rapports (DC)
+                </h4>
+                <p class="text-xs text-slate-600">
+                  Synthèse logique sous <strong>Design Compiler (dc_shell)</strong>, contraintes SDC et analyse des
+                  <strong>rapports (timing, QoR, surface)</strong>.
+                </p>
+              </div>
+
+              <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5">
+                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="ri-layout-grid-line text-[#1E3A8A]"></i> Place & Route (ICC2)
+                </h4>
+                <p class="text-xs text-slate-600">
+                  Floorplanning, placement, synthèse d'arbre d'horloge (CTS) et routage sous <strong>IC Compiler II
+                    (icc2_shell)</strong> avec analyse de congestion.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="flex flex-wrap items-center justify-center gap-2 pb-2">
-          <button onclick="filterProjects('all')" id="filter-all" class="project-filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-900 text-white shadow-xs">
-            Tous les projets
+        <!-- Lycée Poincaré Card -->
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Lycée Henri Poincaré, Nancy</h3>
+              <p class="text-sm font-semibold text-slate-600">Classes Préparatoires aux Grandes Écoles (CPGE)</p>
+            </div>
+            <span class="tag-soft self-start sm:self-center font-mono-num">
+              2022 - 2024
+            </span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm text-slate-600">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 font-mono-num">2023 - 2024 :</span>
+              <span class="tag-navy">PC* (Physique-Chimie Étoile)</span>
+              <span class="text-slate-500 text-xs">— Modélisation physique et préparation intensive aux concours.</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="font-bold text-slate-900 font-mono-num">2022 - 2023 :</span>
+              <span class="tag-soft">PCSI</span>
+              <span class="text-slate-500 text-xs">— Physique, Chimie et Sciences de l'Ingénieur.</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 pt-1.5 border-t border-slate-100">
+              <span class="font-bold text-slate-900 font-mono-num">2022 :</span>
+              <span class="tag-soft">Baccalauréat Général</span>
+              <span class="text-slate-500 text-xs">— Spé. Mathématiques & Physique-Chimie, Option Maths Expertes,
+                Section Européenne Anglais (Mention Très Bien).</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Experiences List -->
+        <div class="card-clean p-6 sm:p-8 space-y-6">
+          <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">
+            Expériences Professionnelles & Stages
+          </h3>
+
+          <div class="space-y-6">
+
+            <!-- Exp 1: USFQ -->
+            <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-bold text-slate-900 text-base">
+                  Stagiaire Recherche — Conception, Prototypage CNC & Mesures RF d'Antenne <span class="font-mono-num text-[#1E3A8A]">4.0 GHz</span>
+                </h4>
+                <span class="tag-navy font-mono-num">Juin – Août 2026</span>
+              </div>
+              <p class="text-xs font-semibold text-[#1E3A8A]">Universidad San Francisco de Quito (USFQ) — Cumbayá /
+                Quito, Équateur</p>
+
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Projet de recherche au département d'ingénierie électronique et télécommunications sur la conception de bout en bout d'une antenne patch large bande pour banc Software Defined Radio (SDR) et géolocalisation ToA :
+              </p>
+
+              <ul class="text-xs text-slate-600 space-y-2 leading-relaxed pt-1">
+                <li>• <strong>Modélisation & Simulation 3D (Ansys HFSS) :</strong> Conception théorique et simulation FEM d'une antenne patch à <span class="font-mono-num">4.0 GHz</span> avec couplage capacitif fente (gap coupling) et résonateur parasite coplanaire sur substrat FR-4 (<span class="font-mono-num">εr = 4.4, h = 1.6 mm</span>) pour dépasser la bande passante standard (cible &ge; 200 MHz pour canaux OFDM).</li>
+                <li>• <strong>Fabrication Rapide en Laboratoire (CNC & Chimie) :</strong> Usinage d'isolation sur fraiseuse CNC (fichiers Gerber via KiCad, FlatCAM), finition par gravure chimique au FeCl₃, soudure SMA et analyse causale des tolérances de fraisage (Prototype 1 vs 2).</li>
+                <li>• <strong>Caractérisation Vectorielle & Banc 2D Motorisé :</strong> Mesures RF sur NanoVNA validant une bande passante à -10 dB de <strong>370 MHz (9.25%)</strong> couvrant 3.90 à 4.27 GHz (<span class="font-mono-num">S11 = -32.1 dB</span> à 3.96 GHz). Assemblage d'un banc de test motorisé 2D avec récepteur SDR pour relever les diagrammes de rayonnement en champ lointain (plans E et H, rapport avant/arrière &gt; 14 dB).</li>
+              </ul>
+
+              <div class="pt-2">
+                <a href="report.pdf" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-white bg-[#1E3A8A] hover:bg-slate-900 rounded-lg shadow-xs transition-colors">
+                  <i class="ri-file-pdf-2-line text-sm"></i>
+                  Consulter le Rapport de Stage (PDF • 10 pages)
+                </a>
+              </div>
+            </div>
+
+            <!-- Exp 2: RMI -->
+            <div class="p-5 border border-slate-200 rounded-xl space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-bold text-slate-900 text-base">Mécanicien de Maintenance Industrielle</h4>
+                <span class="tag-soft font-mono-num">Juin – Août 2025</span>
+              </div>
+              <p class="text-xs font-semibold text-slate-500">Rénovation Machines Industrielles (RMI) — Nomeny et divers sites, France</p>
+              <ul class="text-xs text-slate-600 space-y-1.5 pt-1">
+                <li>• Expérience pratique approfondie en maintenance mécanique industrielle sur des parcs de machines variés (atelier et sur site).</li>
+                <li>• Développement d’une autonomie technique et adaptabilité en environnement industriel exigeant.</li>
+              </ul>
+            </div>
+
+            <!-- Exp 3: Quipment -->
+            <div class="p-5 border border-slate-200 rounded-xl space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-bold text-slate-900 text-base">Opérateur de Maintenance Biomédicale</h4>
+                <span class="tag-soft font-mono-num">Août – Sept 2023</span>
+              </div>
+              <p class="text-xs font-semibold text-slate-500">Quipment — Nancy, France</p>
+              <ul class="text-xs text-slate-600 space-y-1.5 pt-1">
+                <li>• Maintenance préventive et configuration de dispositifs médicaux selon les normes cliniques.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 3: PROJETS & FICHES TECHNIQUES ==================== -->
+    <section id="content-projects" class="tab-content space-y-8">
+
+      <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Projets & Fiches Techniques</h2>
+          <p class="text-xs text-slate-500">Synthèse structurée des réalisations : Problématique, Méthodologie et
+            Métriques de performance.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5">
+          <button onclick="filterProjects('all')" id="filter-all"
+            class="project-filter-btn px-3 py-1.5 text-xs font-bold bg-[#1E3A8A] text-white rounded-lg">
+            Tous
           </button>
-          <button onclick="filterProjects('antennas')" id="filter-antennas" class="project-filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white border border-slate-200 text-slate-600 hover:border-blue-300">
-            Antennes & Propagation
+          <button onclick="filterProjects('antennas')" id="filter-antennas"
+            class="project-filter-btn px-3 py-1.5 text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:border-blue-400 rounded-lg">
+            Antennes & Électromagnétisme
           </button>
-          <button onclick="filterProjects('rf-circuits')" id="filter-rf-circuits" class="project-filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white border border-slate-200 text-slate-600 hover:border-blue-300">
+          <button onclick="filterProjects('rf-circuits')" id="filter-rf-circuits"
+            class="project-filter-btn px-3 py-1.5 text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:border-blue-400 rounded-lg">
             Circuits Hyperfréquences (ADS)
           </button>
-          <button onclick="filterProjects('fpga-embedded')" id="filter-fpga-embedded" class="project-filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white border border-slate-200 text-slate-600 hover:border-blue-300">
-            VHDL & FPGA
+          <button onclick="filterProjects('analog-rf')" id="filter-analog-rf"
+            class="project-filter-btn px-3 py-1.5 text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:border-blue-400 rounded-lg">
+            Liaison & Électronique RF (PSpice)
           </button>
         </div>
+      </div>
 
-        <!-- Projects Container Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          <!-- PROJECT 1: RF Fingerprinting Antennas (USFQ 2026) -->
-          <div class="project-card antennas rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-3">
-                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">USFQ Équateur • 2026</span>
-                <span class="px-2.5 py-1 bg-blue-50 text-[10px] font-extrabold text-blue-700 rounded-full border border-blue-200 uppercase tracking-wider">
-                  Stage Recherche USFQ
-                </span>
-              </div>
+      <div class="space-y-6">
 
-              <h3 class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                Conception d'Antennes 5.7 GHz pour Beamforming & RF Fingerprinting
+        <!-- FICHE 01: USFQ 4.0 GHz Wideband Patch Antenna -->
+        <div class="project-card antennas card-clean p-6 sm:p-8 space-y-5">
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <span class="tag-navy mb-1">Stage Recherche USFQ • <span class="font-mono-num">2026</span></span>
+              <h3 class="text-xl font-bold text-slate-900">
+                Conception, Prototypage CNC & Mesures RF d'Antenne Patch <span class="font-mono-num text-[#1E3A8A]">4.0 GHz</span> Large Bande
               </h3>
-
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Conception et simulation d'antennes directives à 5.7 GHz sur la plateforme SDR pour la transition du banc de géolocalisation ToA vers la bande libre ISM.
-              </p>
-
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-100">
-                <li>• Modélisation sous <strong>ANSYS HFSS</strong> de microstrip patchs à couplage capacitif / parasitaire pour élargir la bande passante (BP 9.2%, S11 &lt; -10 dB).</li>
-                <li>• Adaptation d'impédance 50 Ohms par transformateur quart d'onde sans perçage de vias.</li>
-                <li>• Préparation des briques élémentaires pour le beamforming actif et l'extension vers une architecture Multi-User MIMO.</li>
-              </ul>
             </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">ANSYS HFSS</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Bande ISM 5.7 GHz</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Patch Parasitaire</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">SDR Testbench</span>
-            </div>
-          </div>
-
-          <!-- PROJECT 2: MLA 5.2 GHz Amplifier -->
-          <div class="project-card rf-circuits rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-3">
-                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">ENSEEIHT • 2026</span>
-                <span class="px-2.5 py-1 bg-indigo-50 text-[10px] font-extrabold text-indigo-700 rounded-full border border-indigo-200 uppercase tracking-wider">
-                  Hyperfréquences & ADS
-                </span>
-              </div>
-
-              <h3 class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                Amplificateur Hyperfréquence MLA 5.2 GHz
-              </h3>
-
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Conception intégrée d'un amplificateur hyperfréquence à faible bruit dans la bande ISM 5.2 GHz pour un émetteur superhétérodyne.
-              </p>
-
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-100">
-                <li>• Calculs précis du point de polarisation statique et dynamique du transistor.</li>
-                <li>• Adaptations d'impédance d'entrée et de sortie sur <strong>abaque de Smith</strong>.</li>
-                <li>• Synthèse du layout sur substrat RF et simulation électromagnétique sous <strong>Keysight ADS Momentum</strong>.</li>
-              </ul>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Keysight ADS</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Momentum 2.5D</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Abaque de Smith</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Bande 5.2 GHz</span>
-            </div>
-          </div>
-
-          <!-- PROJECT 3: Antenna Suite (Patch, Cornet, Waveguide) -->
-          <div class="project-card antennas rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-3">
-                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">ENSEEIHT • 2026</span>
-                <span class="px-2.5 py-1 bg-purple-50 text-[10px] font-extrabold text-purple-700 rounded-full border border-purple-200 uppercase tracking-wider">
-                  Conception d'Antennes
-                </span>
-              </div>
-
-              <h3 class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                Antenne Patch, Antenne Cornet & Guide d'Onde à Fente
-              </h3>
-
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Étude, dimensionnement et simulation sous <strong>ANSYS HFSS</strong> de diverses structures d'antennes et guides d'ondes pour applications spatiales et télécommunications.
-              </p>
-
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-100">
-                <li>• <strong>Antenne Patch :</strong> Calcul du patch rectangulaire, adaptation par ligne quart d'onde et diagrammes de rayonnement.</li>
-                <li>• <strong>Antenne Cornet :</strong> Optimisation du gain directif et ouverture du faisceau.</li>
-                <li>• <strong>Guide d'onde à fente :</strong> Réseau d'antennes guidées et répartition des champs EM.</li>
-              </ul>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">ANSYS HFSS 3D</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Antenne Patch</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Guide d'Onde</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Diagramme de Rayonnement</span>
-            </div>
-          </div>
-
-          <!-- PROJECT 4: FM Audio Link -->
-          <div class="project-card rf-circuits rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-3">
-                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">ENSEEIHT • 2025</span>
-                <span class="px-2.5 py-1 bg-emerald-50 text-[10px] font-extrabold text-emerald-700 rounded-full border border-emerald-200 uppercase tracking-wider">
-                  Télécoms FM & Circuits
-                </span>
-              </div>
-
-              <h3 class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                Liaison Audio par Modulation FM
-              </h3>
-
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Dimensionnement complet d'un émetteur-récepteur FM pour transmission audio haute fidélité.
-              </p>
-
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-100">
-                <li>• Génération de fréquence par <strong>VCO</strong> et démodulation par <strong>PLL</strong>.</li>
-                <li>• Étage amplificateur <strong>Cascode</strong> pour immunité contre les effets capacitifs parasite.</li>
-                <li>• Filtrage actif <strong>Sallen-Key</strong> et <strong>Rauch</strong> pour réjection de porteuse.</li>
-              </ul>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">VCO & PLL</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Ampli Cascode</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Filtres Sallen-Key</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Modulation FM</span>
-            </div>
-          </div>
-
-          <!-- PROJECT 5: Real-Time FPGA Frequency Meter -->
-          <div class="project-card fpga-embedded rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between gap-3">
-                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">ENSEEIHT • 2025</span>
-                <span class="px-2.5 py-1 bg-orange-50 text-[10px] font-extrabold text-orange-700 rounded-full border border-orange-200 uppercase tracking-wider">
-                  VHDL & FPGA Artix-7
-                </span>
-              </div>
-
-              <h3 class="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                Fréquencemètre Temps Réel sur FPGA
-              </h3>
-
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Architecture VHDL synchrone conçue pour FPGA Artix-7 sous Xilinx Vivado.
-              </p>
-
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-100">
-                <li>• Numérisation temps réel via l'IP <strong>XADC</strong> intégrée.</li>
-                <li>• Traitement du signal virgule fixe et compteur de fréquence haute résolution.</li>
-                <li>• Conception de puces sous environnement <strong>Synopsys</strong>.</li>
-              </ul>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">VHDL / Vivado</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Artix-7 FPGA</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Convertisseur XADC</span>
-              <span class="px-2 py-1 bg-slate-50 text-[10px] font-bold text-slate-600 rounded-md border border-slate-200">Synopsys</span>
-            </div>
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- ==================== TAB 4: MOBILITY & USFQ (MOBILITÉ) ==================== -->
-      <section id="content-mobility" class="tab-content space-y-8">
-        
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Ouverture Internationale</span>
-          <h2 class="text-3xl font-extrabold text-slate-900">Mobilité Internationale & Stage USFQ</h2>
-          <p class="text-sm text-slate-500">Expériences de recherche à l'étranger, compétences linguistiques et engagement éco-responsable.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
-          <!-- Column 1: Linguistic Skills -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-6">
-            <div class="flex items-center gap-3">
-              <div class="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold">
-                <i class="ri-translate-2"></i>
-              </div>
-              <h3 class="text-lg font-bold text-slate-900">Compétences Linguistiques</h3>
-            </div>
-
-            <div class="space-y-5">
-              <div>
-                <div class="flex justify-between items-center mb-1.5">
-                  <span class="text-sm font-bold text-slate-900">Français</span>
-                  <span class="text-[10px] font-extrabold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">Langue Maternelle</span>
-                </div>
-                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div class="bg-blue-600 h-full w-full rounded-full"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between items-center mb-1.5">
-                  <span class="text-sm font-bold text-slate-900">Anglais</span>
-                  <span class="text-[10px] font-extrabold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">B2+ (Certifié Cambridge)</span>
-                </div>
-                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div class="bg-blue-600 h-full w-[85%] rounded-full"></div>
-                </div>
-                <p class="text-[11px] text-slate-400 mt-1">Pratique fluide à l'écrit et à l'oral en environnement de recherche.</p>
-              </div>
-
-              <div>
-                <div class="flex justify-between items-center mb-1.5">
-                  <span class="text-sm font-bold text-slate-900">Italien</span>
-                  <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">Niveau A2</span>
-                </div>
-                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div class="bg-slate-400 h-full w-[40%] rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 2: USFQ Ecuador Internship Focus -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-6">
-            <div class="flex items-center gap-3">
-              <div class="h-10 w-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl font-bold">
-                <i class="ri-flight-takeoff-line"></i>
-              </div>
-              <h3 class="text-lg font-bold text-slate-900">Stage USFQ (Équateur)</h3>
-            </div>
-
-            <div class="space-y-4">
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 space-y-3">
-                <div class="flex items-center gap-3">
-                  <span class="text-3xl">🇪🇨</span>
-                  <div>
-                    <h4 class="text-sm font-bold text-slate-900">Quito / Cumbayá (USFQ)</h4>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase">Juin – Août 2026</span>
-                  </div>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                  Stage de recherche à l'<strong>Universidad San Francisco de Quito (USFQ)</strong>. Transition vers la bande ISM 5.7 GHz, conception HFSS d'antennes directives et mise en œuvre du banc SDR pour le beamforming et l'architecture Multi-User MIMO.
-                </p>
-                <div class="pt-2 border-t border-slate-200/60">
-                  <span class="text-[11px] font-bold text-slate-800">Indisponibilité :</span>
-                  <span class="text-[11px] text-slate-600"> Présent en Équateur jusqu'à fin août 2026.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 3: Sustainability / Carbon Footprint -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-6">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="h-10 w-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold">
-                  <i class="ri-leaf-line"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-900">Empreinte Carbone</h3>
-              </div>
-              <span class="text-[9px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full border border-emerald-200 uppercase">
-                Éco-Bilan
-              </span>
-            </div>
-
-            <div class="space-y-4">
-              <div class="p-4 rounded-2xl bg-slate-50 space-y-3">
-                <div class="flex justify-between items-start text-xs border-b border-slate-200/60 pb-2">
-                  <span class="text-slate-500">TLS ↔ Quito (Vol Aller-Retour)</span>
-                  <span class="font-bold text-slate-900">~3 400 kg CO2</span>
-                </div>
-                <div class="flex justify-between items-start text-xs border-b border-slate-200/60 pb-2">
-                  <span class="text-slate-500">Déplacements locaux</span>
-                  <span class="font-bold text-slate-900">~250 kg CO2</span>
-                </div>
-                <div class="flex justify-between items-center text-xs pt-1">
-                  <span class="font-bold text-slate-900">Total Estimé</span>
-                  <span class="font-black text-blue-600 text-sm">~3 650 kg CO2eq</span>
-                </div>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-100 space-y-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="h-2 w-2 rounded-full bg-emerald-600"></span>
-                  <h4 class="text-xs font-bold text-emerald-900 uppercase">Conforme aux objectifs</h4>
-                </div>
-                <p class="text-xs text-emerald-800 leading-relaxed">
-                  L'impact carbone de <strong>3,65 t CO2eq</strong> s'inscrit en dessous du seuil cible de 6 t.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- ==================== TAB 5: PPP & CAREER GOALS (PROJET PRO) ==================== -->
-      <section id="content-ppp" class="tab-content space-y-8">
-        
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Positionnement & Employeurs</span>
-          <h2 class="text-3xl font-extrabold text-slate-900">Projet Professionnel & Secteurs Cibles</h2>
-          <p class="text-sm text-slate-500">Intitulés de postes, domaines d'expertise visés et entreprises cibles en R&D Hardware RF.</p>
-        </div>
-
-        <div class="max-w-5xl mx-auto space-y-8">
-          
-          <!-- Core Target Positions Block -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 md:p-10 shadow-sm space-y-6">
-            <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4 flex items-center gap-3">
-              <i class="ri-focus-3-line text-blue-600"></i> Intitulés de Postes Recherchés (Cœur de Cible)
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
-                <i class="ri-rfid-fill text-blue-600 text-xl"></i>
-                <span class="text-xs font-bold text-slate-900">Ingénieur Conception RF / Hyperfréquences</span>
-              </div>
-              <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
-                <i class="ri-wireless-charging-line text-blue-600 text-xl"></i>
-                <span class="text-xs font-bold text-slate-900">Ingénieur Antennes & Propagation</span>
-              </div>
-              <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
-                <i class="ri-hardware-chip-line text-blue-600 text-xl"></i>
-                <span class="text-xs font-bold text-slate-900">Ingénieur Hardware HF</span>
-              </div>
-              <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
-                <i class="ri-shield-check-line text-blue-600 text-xl"></i>
-                <span class="text-xs font-bold text-slate-900">Ingénieur CEM / Caractérisation RF</span>
-              </div>
-              <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
-                <i class="ri-cpu-line text-blue-600 text-xl"></i>
-                <span class="text-xs font-bold text-slate-900">Ingénieur Électronique Embarquée HF</span>
-              </div>
-              <div class="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
-                <i class="ri-signal-tower-line text-blue-600 text-xl"></i>
-                <span class="text-xs font-bold text-slate-900">Ingénieur Traitement du Signal RF / Télécoms</span>
-              </div>
-            </div>
-
-            <!-- Missions & Technologies -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100 text-xs">
-              <div class="space-y-2">
-                <h4 class="font-extrabold text-slate-900 uppercase text-[11px] text-blue-600">Missions Souhaitées :</h4>
-                <p class="text-slate-600 leading-relaxed">
-                  Design, simulation électromagnétique 3D (HFSS, ADS Momentum), caractérisation d'antennes directives 5.7 GHz, adaptateurs d'impédance, bancs de test SDR, beamforming actif et architectures Multi-User MIMO.
-                </p>
-              </div>
-
-              <div class="space-y-2">
-                <h4 class="font-extrabold text-slate-900 uppercase text-[11px] text-blue-600">Technologies Incontournables :</h4>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="px-2.5 py-1 bg-slate-900 text-white text-[10px] font-bold rounded-lg">ANSYS HFSS</span>
-                  <span class="px-2.5 py-1 bg-slate-900 text-white text-[10px] font-bold rounded-lg">Keysight ADS / Momentum</span>
-                  <span class="px-2.5 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-lg">SDR Testbench</span>
-                  <span class="px-2.5 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-lg">VHDL / Vivado</span>
-                  <span class="px-2.5 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-lg">MATLAB / Simulink</span>
-                  <span class="px-2.5 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-lg">Python</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sectors & Target Companies Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- Priority Sectors & Companies -->
-            <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-4">
-              <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
-                <i class="ri-building-4-line text-blue-600"></i> Secteurs & Entreprises Cibles
-              </h4>
-
-              <div class="space-y-3 text-xs text-slate-600">
-                <div>
-                  <span class="font-extrabold text-slate-900 block mb-1">Secteurs Prioritaires :</span>
-                  <p>Aéronautique, Spatial, Défense, Télécommunications, Composants Hardware RF, Laboratoires R&D (CNES, ONERA, CEA, CNRS...).</p>
-                </div>
-
-                <div class="pt-2 border-t border-slate-100">
-                  <span class="font-extrabold text-slate-900 block mb-1">Exemples d'Entreprises Cibles :</span>
-                  <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">Thales</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">Airbus</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">CNES</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">NXP</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">STMicroelectronics</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">Safran</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">Rohde & Schwarz</span>
-                    <span class="px-2 py-1 bg-slate-100 font-bold text-slate-800 rounded-md">Radiall</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Geographic Mobility & Contract Conditions -->
-            <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-4">
-              <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
-                <i class="ri-map-pin-2-line text-blue-600"></i> Mobilité & Conditions
-              </h4>
-
-              <div class="space-y-3 text-xs text-slate-600">
-                <div class="flex justify-between border-b border-slate-100 pb-2">
-                  <span class="font-bold text-slate-900">Zones Acceptées :</span>
-                  <span>Toulouse (Blagnac, Labège, Colomiers) & Métropoles</span>
-                </div>
-                <div class="flex justify-between border-b border-slate-100 pb-2">
-                  <span class="font-bold text-slate-900">Mobilité Nationale & Internationale :</span>
-                  <span>Ouvert (Sans importance)</span>
-                </div>
-                <div class="flex justify-between border-b border-slate-100 pb-2">
-                  <span class="font-bold text-slate-900">Habilitation Défense :</span>
-                  <span class="text-blue-600 font-bold">Possible / Adapté</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="font-bold text-slate-900">Niveau de technicité minimal :</span>
-                  <span class="text-blue-600 font-bold">Conception R&D Hardware</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- PPP Presentation Slides Download Banner -->
-          <div class="rounded-3xl bg-slate-900 text-white p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
-            <div class="space-y-1 text-center sm:text-left">
-              <h4 class="font-bold text-lg">Diapositives de Présentation PPP</h4>
-              <p class="text-xs text-slate-300">Découvrez le support de ma présentation sur l'orientation et l'analyse de marché.</p>
-            </div>
-            <a href="Slides PPP/slides.html" target="_blank" class="px-6 py-3.5 rounded-2xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-500 transition-colors flex items-center gap-2 shrink-0">
-              <i class="ri-slideshow-3-line text-base"></i> Diapositives (PDF)
+            <a href="report.pdf" target="_blank"
+              class="self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#1E3A8A] hover:bg-slate-900 rounded-lg shadow-xs transition-colors">
+              <i class="ri-file-pdf-2-line"></i> Rapport de Stage (PDF)
             </a>
           </div>
 
-        </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
 
-      </section>
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">1. Problématique</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Dépasser la bande passante intrinsèquement étroite (&approx; 2–3%) des patchs classiques sur substrat bas coût FR-4 (εr = 4.4, h = 1.6 mm) pour assurer le débit de canaux OFDM (&ge; 200 MHz / 5.0%) sur banc de géolocalisation SDR ToA sub-6 GHz.
+              </p>
+            </div>
 
-      <!-- ==================== TAB 6: CIVIC & HOBBIES (ENGAGEMENTS) ==================== -->
-      <section id="content-civic" class="tab-content space-y-8">
-        
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Vie Associative & Passions</span>
-          <h2 class="text-3xl font-extrabold text-slate-900">Engagements Citoyens & Loisirs</h2>
-          <p class="text-sm text-slate-500">Implication dans la communauté étudiante ENSEEIHT et intérêts personnels.</p>
-        </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">2. Méthodologie & Prototypage</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Modélisation électromagnétique 3D sous <strong>Ansys HFSS</strong> avec couplage capacitif fente (gap) et résonateur parasite coplanaire. Fabrication rapide en labo par <strong>fraisage CNC</strong> d'isolation (KiCad, FlatCAM), finition chimique FeCl₃, soudure SMA et analyse causale des tolérances d'usinage.
+              </p>
+            </div>
 
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <!-- Student Involvement Card -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-6">
-            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
-              <div class="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold">
-                <i class="ri-team-line"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900">Vie Étudiante & Responsabilités</h3>
-                <p class="text-xs text-slate-500">Gestion de projets associatifs d'envergure.</p>
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">3. Métriques Obtenues</h4>
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 space-y-1 font-mono-num text-[11px]">
+                <div>• Fréquence cible : <strong>4.0 GHz (3.90 – 4.27 GHz)</strong></div>
+                <div>• Bande passante mesurée : <strong>370 MHz (9.25% à -10 dB)</strong></div>
+                <div>• Adaptation S11 : <strong>-32.1 dB (3.96 GHz) & -15.6 dB</strong></div>
+                <div>• Diagramme 2D : <strong>HPBW 36°-49° (Plan H), F/B > 14 dB</strong></div>
               </div>
             </div>
 
-            <div class="space-y-6">
-              <div class="relative pl-6 border-l-2 border-slate-200">
-                <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white bg-blue-600 shadow-xs"></div>
-                <span class="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider">2024 - 2026</span>
-                <h4 class="font-bold text-slate-900 text-sm mt-0.5">Vice-Président de Liste BDE Po7idon</h4>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Coordination d'une équipe de 70 personnes pour la campagne du Bureau des Élèves. Gestion d'un budget supérieur à <strong>15 k€</strong> et organisation d'événements majeurs de l'école.
-                </p>
-              </div>
-
-              <div class="relative pl-6 border-l-2 border-slate-200">
-                <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white bg-slate-300 shadow-xs"></div>
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">2024 - 2025</span>
-                <h4 class="font-bold text-slate-900 text-sm mt-0.5">Responsable Afterworks — AE ENSEEIHT</h4>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Organisation hebdomadaire des événements au bar associatif ("Foyer"), gestion logistique et animation de la vie étudiante.
-                </p>
-              </div>
-            </div>
           </div>
 
-          <!-- Passions & Hobbies Card -->
-          <div class="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm space-y-6">
-            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
-              <div class="h-10 w-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold">
-                <i class="ri-heart-3-line"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900">Passions Personnelles</h3>
-                <p class="text-xs text-slate-500">Discipline, créativité et rigueur.</p>
-              </div>
-            </div>
-
-            <div class="space-y-4">
-              <!-- Swimming -->
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
-                <div class="h-10 w-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl shrink-0">
-                  <i class="ri-water-flash-line"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-slate-900 text-sm">Natation</h4>
-                  <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">Niveau Compétition Régionale</span>
-                  <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                    Développement de la discipline, de l'endurance et de la persévérance.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Electric Guitar -->
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
-                <div class="h-10 w-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl shrink-0">
-                  <i class="ri-music-2-line"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-slate-900 text-sm">Guitare Électrique</h4>
-                  <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">8 ans de pratique</span>
-                  <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                    Pratique en solo et en groupe (Lien direct avec l'analyse d'effets audio FM/pedale).
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tag-soft">Ansys HFSS 3D</span>
+            <span class="tag-soft">NanoVNA Vectoriel</span>
+            <span class="tag-soft">Usinage CNC (FlatCAM)</span>
+            <span class="tag-soft">Couplage Parasitaire</span>
+            <span class="tag-soft">Banc Motorisé 2D</span>
           </div>
 
         </div>
 
-      </section>
+        <!-- FICHE 02: MLA 5.2 GHz Amplifier -->
+        <div class="project-card rf-circuits card-clean p-6 sm:p-8 space-y-5">
 
-    </main>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <span class="tag-navy mb-1">ENSEEIHT • 2A SysCom • <span class="font-mono-num">2026</span></span>
+              <h3 class="text-xl font-bold text-slate-900">
+                Amplificateur Hyperfréquence <span class="font-mono-num text-[#1E3A8A]">5.2 GHz</span> & Émetteur Radio (ADS / Momentum)
+              </h3>
+            </div>
+          </div>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="border-t border-slate-200/80 bg-white py-10 mt-16 text-center">
-      <div class="max-w-7xl mx-auto px-4 space-y-4">
-        <div class="flex justify-center items-center gap-6">
-          <a href="https://github.com/cass54" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 transition-colors flex items-center gap-2 text-xs font-bold">
-            <i class="ri-github-fill text-lg"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/raphael-cassard-b6224b32a" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 transition-colors flex items-center gap-2 text-xs font-bold">
-            <i class="ri-linkedin-box-fill text-lg"></i> LinkedIn
-          </a>
-          <a href="mailto:cassardraph@gmail.com" class="text-slate-400 hover:text-blue-600 transition-colors flex items-center gap-2 text-xs font-bold">
-            <i class="ri-mail-line text-lg"></i> Email
-          </a>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">1. Problématique</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Conception complète d'un amplificateur haute fréquence à 5.2 GHz pour un émetteur radio superhétérodyne avec contraintes de gain, de stabilité inconditionnelle et d'adaptation d'impédance.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">2. Méthodologie & CAO</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Sélection et polarisation du transistor hyperfréquence, synthèse des réseaux d'adaptation d'impédance 50 Ω sur <strong>abaque de Smith</strong>, tracé du circuit imprimé RF (layout microruban) et co-simulation EM sous <strong>Keysight ADS Momentum</strong>.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">3. Métriques Obtenues</h4>
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 space-y-1 font-mono-num text-[11px]">
+                <div>• Fréquence centrale : <strong>5.2 GHz</strong></div>
+                <div>• Outils CAO : <strong>Keysight ADS & Momentum</strong></div>
+                <div>• Adaptation : <strong>Lignes microstrip & stubs 50 Ω</strong></div>
+                <div>• Co-simulation : <strong>Schématique + Layout 2.5D</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tag-soft">Keysight ADS</span>
+            <span class="tag-soft">Momentum 2.5D</span>
+            <span class="tag-soft">Abaque de Smith</span>
+            <span class="tag-soft">Ampli RF 5.2 GHz</span>
+            <span class="tag-soft">Lignes Microruban</span>
+          </div>
+
         </div>
-        <p class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">© 2026 Raphaël Cassard — Élève Ingénieur SysCom ENSEEIHT</p>
+
+        <!-- FICHE 03: Horn & Patch Antennas 10 GHz -->
+        <div class="project-card antennas card-clean p-6 sm:p-8 space-y-5">
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <span class="tag-navy mb-1">ENSEEIHT • 2A SysCom • <span class="font-mono-num">2026</span></span>
+              <h3 class="text-xl font-bold text-slate-900">
+                Antennes Cornet & Patch pour Faisceau Hertzien <span class="font-mono-num text-[#1E3A8A]">10 GHz</span> (HFSS / MATLAB)
+              </h3>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">1. Problématique</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Dimensionnement, simulation et comparaison de solutions rayonnantes (ouverture vs planaire) pour une liaison faisceau hertzien point-à-point à 10 GHz répondant à un gabarit de directivité strict.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">2. Méthodologie & CAO</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Dimensionnement analytique et simulation électromagnétique 3D sous <strong>Ansys HFSS</strong> d'une antenne cornet pyramidale et d'un patch microstrip sur substrat Rogers. Extraction des diagrammes de rayonnement 3D et calcul numérique du bilan de liaison sous <strong>MATLAB</strong>.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">3. Métriques Obtenues</h4>
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 space-y-1 font-mono-num text-[11px]">
+                <div>• Fréquence cible : <strong>10.0 GHz (Bande X)</strong></div>
+                <div>• Outils : <strong>Ansys HFSS 3D & MATLAB</strong></div>
+                <div>• Typologies : <strong>Cornet pyramidal & Patch Rogers</strong></div>
+                <div>• Études : <strong>Plans E/H, gain, directivité & bilan hertzien</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tag-soft">Ansys HFSS 3D</span>
+            <span class="tag-soft">MATLAB</span>
+            <span class="tag-soft">Antenne Cornet</span>
+            <span class="tag-soft">Patch Rogers 10 GHz</span>
+            <span class="tag-soft">Faisceau Hertzien</span>
+          </div>
+
+        </div>
+
+        <!-- FICHE 04: Electromagnetic Waveguide Modeling -->
+        <div class="project-card antennas card-clean p-6 sm:p-8 space-y-5">
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <span class="tag-navy mb-1">ENSEEIHT • 2A SysCom • <span class="font-mono-num">2026</span></span>
+              <h3 class="text-xl font-bold text-slate-900">
+                Modélisation Électromagnétique de Structure Guidante (HFSS / MATLAB)
+              </h3>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">1. Problématique</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Modélisation analytique fine du comportement dispersif d'une structure guidante périodique sans recourir exclusivement à de lourdes simulations FEM numériques globales.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">2. Méthodologie Théorique & Numérique</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Résolution théorique par la <strong>méthode des schémas équivalents</strong> (quadripôles LC, impédances caractéristiques). Établissement et résolution de l'équation de dispersion sous <strong>MATLAB</strong>, puis confrontation avec les résultats d'une simulation 3D sous <strong>Ansys HFSS</strong>.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">3. Métriques Obtenues</h4>
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 space-y-1 font-mono-num text-[11px]">
+                <div>• Méthode : <strong>Schémas équivalents (L, C)</strong></div>
+                <div>• Outils : <strong>MATLAB & Ansys HFSS 3D</strong></div>
+                <div>• Validation : <strong>Courbes de dispersion concordantes</strong></div>
+                <div>• Domaines : <strong>Ondes guidées & structures périodiques</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tag-soft">Ansys HFSS 3D</span>
+            <span class="tag-soft">MATLAB</span>
+            <span class="tag-soft">Schémas Équivalents</span>
+            <span class="tag-soft">Courbes de Dispersion</span>
+            <span class="tag-soft">Structures Guidantes</span>
+          </div>
+
+        </div>
+
+        <!-- FICHE 05: Optoelectronic FM Audio Link -->
+        <div class="project-card analog-rf card-clean p-6 sm:p-8 space-y-5">
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <span class="tag-navy mb-1">ENSEEIHT • 2A SysCom • <span class="font-mono-num">2025 – 2026</span></span>
+              <h3 class="text-xl font-bold text-slate-900">
+                Liaison Audio FM Optoélectronique — Émetteur & Récepteur (PSpice)
+              </h3>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">1. Problématique</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Transmission audio analogique sans distorsion via modulation de fréquence sur canal optique, avec immunité électromagnétique, forte fidélité et rapport signal sur bruit élevé.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">2. Architecture & Simulation CAO</h4>
+              <p class="text-slate-600 leading-relaxed">
+                Conception et dimensionnement sous <strong>Orcad PSpice</strong> : émetteur avec modulateur <strong>VCO</strong>, étage d'attaque <strong>Cascode sélectif</strong> et LED ; récepteur avec photodiode, boucle à verrouillage de phase <strong>PLL</strong> et filtrage actif passe-bas de <strong>Sallen-Key</strong>.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-[#1E3A8A]">3. Métriques Obtenues</h4>
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 space-y-1 font-mono-num text-[11px]">
+                <div>• Logiciel de CAO : <strong>Orcad PSpice</strong></div>
+                <div>• Modulation / Démodulation : <strong>VCO & PLL</strong></div>
+                <div>• Amplification : <strong>Étage Cascode sélectif</strong></div>
+                <div>• Filtrage de restitution : <strong>Filtre actif de Sallen-Key</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tag-soft">Orcad PSpice</span>
+            <span class="tag-soft">VCO</span>
+            <span class="tag-soft">PLL</span>
+            <span class="tag-soft">Cascode Sélectif</span>
+            <span class="tag-soft">Filtre Sallen-Key</span>
+            <span class="tag-soft">Optoélectronique FM</span>
+          </div>
+
+        </div>
+
       </div>
-    </footer>
 
-    <!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
-    <script>
-      // Tab Switching Functionality
-      function switchTab(tabId) {
-        // Hide all tab contents
-        const allContents = document.querySelectorAll('.tab-content');
-        allContents.forEach(content => {
-          content.classList.remove('active');
-        });
+    </section>
 
-        // Deactivate all nav buttons
-        const allTabBtns = document.querySelectorAll('.nav-tab-btn');
-        allTabBtns.forEach(btn => {
-          btn.classList.remove('active');
-        });
+    <!-- ==================== TAB 4: MOBILITÉ USFQ ==================== -->
+    <section id="content-mobility" class="tab-content space-y-8">
 
-        // Activate target content
-        const targetContent = document.getElementById('content-' + tabId);
-        if (targetContent) {
-          targetContent.classList.add('active');
-        }
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">Mobilité Internationale & Stage USFQ (Équateur)</h2>
+        <p class="text-xs text-slate-500">Projet de recherche à l'étranger, environnement international et bilan carbone
+          éco-responsable.</p>
+      </div>
 
-        // Activate target button
-        const targetBtn = document.getElementById('tab-btn-' + tabId);
-        if (targetBtn) {
-          targetBtn.classList.add('active');
-        }
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        // Scroll gracefully to top of main area
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        <!-- USFQ Details (2 Cols) -->
+        <div class="lg:col-span-2 card-clean p-6 sm:p-8 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <h3 class="text-lg font-bold text-slate-900">
+              Rapport de Stage & Recherche — Universidad San Francisco de Quito (USFQ)
+            </h3>
+            <a href="report.pdf" target="_blank"
+              class="self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#1E3A8A] hover:bg-slate-900 rounded-lg shadow-xs transition-colors">
+              <i class="ri-file-pdf-2-line"></i> Consulter le Rapport (PDF • 10 p.)
+            </a>
+          </div>
+
+          <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 flex flex-wrap justify-between gap-2">
+              <div><strong>Lieu :</strong> Quito / Cumbayá, Équateur</div>
+              <div><strong>Période :</strong> <span class="font-mono-num">Juin – Août 2026</span></div>
+              <div><strong>Domaine :</strong> <span class="font-mono-num">4.0 GHz</span> SDR, Antennes Patch & Mesures RF</div>
+            </div>
+
+            <p>
+              <strong>Contexte & Objectifs du projet de recherche :</strong><br />
+              Développement d'une antenne microstrip directive large bande à <strong><span class="font-mono-num">4.0 GHz</span></strong> sur substrat FR-4 (εr = 4.4, h = 1.6 mm) pour un banc Software Defined Radio (SDR) dédié à la géolocalisation haute précision ToA (Time of Arrival). L'objectif : dépasser la bande étroite des patchs conventionnels (&ge; 200 MHz / 5.0% requis pour les canaux de transmission OFDM) par couplage capacitif (gap coupling) et résonateur coplanaire parasite.
+            </p>
+
+            <p>
+              <strong>Cycle Complet d'Ingénierie & Résultats Expérimentaux :</strong>
+            </p>
+            <ul class="space-y-2 pl-4 list-disc text-slate-600">
+              <li><strong>Modélisation 3D FEM sous Ansys HFSS :</strong> Dimensionnement électromagnétique complet, alimentation par ligne microruban 50 Ω encastrée (inset feed), optimisation fine du gap de couplage et vérification de la distribution de densité de courant de surface.</li>
+              <li><strong>Prototypage Rapide en Laboratoire (Fraisage CNC & Chimie) :</strong> Usinage d'isolation sur fraiseuse CNC (KiCad, FlatCAM), gravure chimique de finition au FeCl₃ et soudure SMA. Analyse causale approfondie de la tolérance d'usinage (Prototype 1 avec surexcavation &Delta;L &approx; -1.0 mm ayant décalé la résonance, corrigée avec succès sur le Prototype 2).</li>
+              <li><strong>Caractérisation RF sur Analyseur Vectoriel (VNA) :</strong> Bande passante mesurée à -10 dB de <strong>370 MHz (9.25%)</strong> de 3.90 à 4.27 GHz, résonance principale à <span class="font-mono-num">3.96 GHz (S11 = -32.1 dB)</span> et secondaire à <span class="font-mono-num">4.22 GHz (S11 = -15.6 dB)</span>.</li>
+              <li><strong>Banc de Test Motorisé 2D & Diagrammes de Rayonnement :</strong> Conception et mise en place d'un banc expérimental tournant avec récepteur SDR pour relever automatiquement les diagrammes en champ lointain : ouverture à mi-puissance (HPBW) de 36° à 49° dans le plan H et 95° à 96° dans le plan E, avec un rapport avant/arrière &gt; 14 dB.</li>
+            </ul>
+
+            <div class="pt-2">
+              <a href="report.pdf" target="_blank"
+                class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-[#1E3A8A] hover:bg-slate-900 rounded-lg shadow transition-colors">
+                <i class="ri-file-pdf-2-line text-base"></i>
+                Consulter le Rapport de Recherche Complet (PDF • 10 pages)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eco Carbon Table -->
+        <div class="card-clean p-6 sm:p-8 space-y-5">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+            Bilan Carbone
+          </h3>
+
+          <div class="space-y-4">
+            <table class="table-airy">
+              <thead>
+                <tr>
+                  <th>Poste d'Émission</th>
+                  <th>Valeur Estimée</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>TLS ↔ Quito (Vol AR)</td>
+                  <td class="font-mono-num font-semibold">~3 400 kg</td>
+                </tr>
+                <tr>
+                  <td>Transports locaux</td>
+                  <td class="font-mono-num font-semibold">~250 kg</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-[#1E3A8A]">Total Estimé</td>
+                  <td class="font-mono-num font-bold text-[#1E3A8A]">~3 650 kg CO2eq</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs space-y-1">
+              <div class="font-bold text-emerald-900">Seuil de conformité : &lt; 6.0 t CO2eq</div>
+              <div class="text-emerald-700">Projet éco-conforme (<span class="font-mono-num">3.65 t</span>).</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 5: PROJET PROFESSIONNEL ==================== -->
+    <section id="content-ppp" class="tab-content space-y-8">
+
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">Projet Professionnel & Secteurs Cibles</h2>
+        <p class="text-xs text-slate-500">Postes visés, environnement technologique et entreprises de l'écosystème RF.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Target Job Titles -->
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+            Postes Cibles (Cœur de Métier)
+          </h3>
+
+          <div class="space-y-2 text-xs">
+            <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg font-bold text-[#1E3A8A]">
+              1. Ingénieur Conception RF / Hyperfréquences
+            </div>
+            <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg font-bold text-[#1E3A8A]">
+              2. Ingénieur Antennes & Propagation
+            </div>
+            <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg font-bold text-[#1E3A8A]">
+              3. Ingénieur Hardware HF
+            </div>
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700">
+              4. Ingénieur CEM / Caractérisation RF
+            </div>
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700">
+              5. Ingénieur Électronique Embarquée HF
+            </div>
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700">
+              6. Ingénieur Traitement du Signal RF / Télécoms
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Sectors & Companies -->
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+            Secteurs & Entreprises Cibles
+          </h3>
+
+          <div class="space-y-4 text-xs text-slate-600">
+            <div>
+              <strong class="text-slate-900 block mb-1">Secteurs d'Activité :</strong>
+              <p>Aéronautique, Spatial, Défense, Télécommunications, Équipementiers Hardware RF, Radar & Connectivité Automobile, Laboratoires R&D (CNES, ONERA, CEA, CNRS...).</p>
+            </div>
+
+            <div class="pt-2 border-t border-slate-100">
+              <strong class="text-slate-900 block mb-2">Exemples d'Entreprises Cibles :</strong>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="tag-soft">Thales / TAS</span>
+                <span class="tag-soft">Airbus Defence & Space</span>
+                <span class="tag-soft">CNES</span>
+                <span class="tag-soft">MBDA</span>
+                <span class="tag-soft">Safran</span>
+                <span class="tag-soft">Anywaves</span>
+                <span class="tag-soft">Aumovio</span>
+                <span class="tag-soft">STMicroelectronics</span>
+                <span class="tag-soft">NXP Semiconductors</span>
+                <span class="tag-soft">UMS (United Monolithic)</span>
+                <span class="tag-soft">Dassault Aviation</span>
+                <span class="tag-soft">Rohde & Schwarz</span>
+                <span class="tag-soft">Keysight Technologies</span>
+                <span class="tag-soft">MVG (Microwave Vision)</span>
+                <span class="tag-soft">Radiall</span>
+                <span class="tag-soft">Huber+Suhner</span>
+                <span class="tag-soft">ONERA</span>
+                <span class="tag-soft">CEA-Leti</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 6: ENGAGEMENTS & CONTACT ==================== -->
+    <section id="content-civic" class="tab-content space-y-8">
+
+      <div class="border-b border-slate-200 pb-3">
+        <h2 class="text-2xl font-bold text-slate-900">Engagements Associatifs & Passions</h2>
+        <p class="text-xs text-slate-500">Vie étudiante ENSEEIHT, sports et centres d'intérêt.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+            Vie Étudiante ENSEEIHT
+          </h3>
+
+          <div class="space-y-4 text-xs text-slate-600">
+            <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">Vice-Président de liste (<span class="font-mono-num">2024 - 2025</span>)</div>
+              <p>Coordination d'une équipe de 70 personnes, gestion d'un budget &gt; <span class="font-mono-num">15 k€</span> et organisation d'événements majeurs de l'école.</p>
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">Responsable Afterworks — AE ENSEEIHT (<span class="font-mono-num">2025 - 2026</span>)</div>
+              <p>Organisation hebdomadaire des événements au bar associatif ("Foyer") et animation de la vie étudiante.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-clean p-6 sm:p-8 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+            Passions Personnelles
+          </h3>
+
+          <div class="space-y-4 text-xs text-slate-600">
+            <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">Natation (Niveau Compétition Régionale)</div>
+              <p>Pratique en club depuis tout petit. Discipline, rigueur et persévérance à travers un entraînement régulier.</p>
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">Guitare Électrique (<span class="font-mono-num">8 ans</span> de
+                pratique)</div>
+              <p>Pratique seul et en groupe (Lien avec l'analyse du signal audio & pédales d'effet).</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t border-slate-200 py-8 mt-16 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-3">
+      <div class="flex justify-center items-center gap-6">
+        <a href="https://www.linkedin.com/in/raphael-cassard-b6224b32a" target="_blank" rel="noopener noreferrer"
+          class="hover:text-[#1E3A8A] transition-colors flex items-center gap-1.5 font-medium">
+          <i class="ri-linkedin-box-fill text-base"></i> LinkedIn
+        </a>
+        <a href="mailto:cassardraph@gmail.com"
+          class="hover:text-[#1E3A8A] transition-colors flex items-center gap-1.5 font-medium">
+          <i class="ri-mail-line text-base"></i> Email
+        </a>
+      </div>
+      <div>© 2026 Raphaël Cassard — Élève-Ingénieur SysCom @ ENSEEIHT</div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
+  <script>
+    // Tab Switching Controller
+    function switchTab(tabId) {
+      const allContents = document.querySelectorAll('.tab-content');
+      allContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      const allTabBtns = document.querySelectorAll('.nav-tab-btn');
+      allTabBtns.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      const targetContent = document.getElementById('content-' + tabId);
+      if (targetContent) {
+        targetContent.classList.add('active');
       }
 
-      // Visibility Toggle for Contact & CV Dropdowns
-      function toggleVisibility(id) {
-        const el = document.getElementById(id);
-        if (el) {
-          el.classList.toggle('show-content');
-        }
+      const targetBtn = document.getElementById('tab-btn-' + tabId);
+      if (targetBtn) {
+        targetBtn.classList.add('active');
       }
 
-      // Mobile Menu Toggle
-      function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        if (menu.classList.contains('hidden')) {
-          menu.classList.remove('hidden');
-          icon.classList.replace('ri-menu-3-line', 'ri-close-line');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Visibility Toggle for Contact & CV Dropdowns
+    function toggleVisibility(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('show-content');
+      }
+    }
+
+    // Mobile Navigation Drawer Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.replace('ri-menu-3-line', 'ri-close-line');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.replace('ri-close-line', 'ri-menu-3-line');
+      }
+    }
+
+    // Project Filter Controller
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.project-filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#1E3A8A]', 'text-white');
+        btn.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+      });
+
+      const activeBtn = document.getElementById('filter-' + category);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+        activeBtn.classList.add('bg-[#1E3A8A]', 'text-white');
+      }
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
         } else {
-          menu.classList.add('hidden');
-          icon.classList.replace('ri-close-line', 'ri-menu-3-line');
+          card.style.display = 'none';
         }
-      }
+      });
+    }
+  </script>
 
-      // Project Filter
-      function filterProjects(category) {
-        const cards = document.querySelectorAll('.project-card');
-        const buttons = document.querySelectorAll('.project-filter-btn');
+</body>
 
-        buttons.forEach(btn => {
-          btn.classList.remove('bg-slate-900', 'text-white');
-          btn.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
-        });
-
-        const activeBtn = document.getElementById('filter-' + category);
-        if (activeBtn) {
-          activeBtn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
-          activeBtn.classList.add('bg-slate-900', 'text-white');
-        }
-
-        cards.forEach(card => {
-          if (category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      }
-    </script>
-
-  </body>
 </html>

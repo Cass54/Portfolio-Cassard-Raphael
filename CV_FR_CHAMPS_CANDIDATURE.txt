@@ -1,0 +1,394 @@
+================================================================================
+FICHE COPIER-COLLER CANDIDATURE — RAPHAËL CASSARD
+Format optimisé pour formulaires ATS (SmartRecruiters, Workday, Taleo, Welcome, etc.)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. INFORMATIONS PERSONNELLES / COORDONNÉES
+--------------------------------------------------------------------------------
+
+Prénom :
+Raphaël
+
+Nom :
+Cassard
+
+Nom complet :
+Raphaël Cassard
+
+Email :
+cassardraph@gmail.com
+
+Téléphone (format international) :
++33622039961
+
+Téléphone (format standard) :
+06 22 03 99 61
+
+Indicatif pays :
+France (+33)
+
+Adresse / Localisation :
+Toulouse, France
+
+Code postal :
+31000
+
+Ville :
+Toulouse
+
+Pays :
+France
+
+Autre ville de rattachement :
+Nancy (54000)
+
+Nationalité / Autorisation de travail :
+Française (Autorisé à travailler en France et UE sans visa)
+
+Permis de conduire :
+Permis B (Véhiculé)
+
+Titre du profil / Intitulé visé (au choix selon le poste) :
+Élève-Ingénieur SysCom @ ENSEEIHT — Électronique RF, Antennes & Hyperfréquences
+
+Version courte :
+Ingénieur Stagiaire Électronique RF & Antennes
+
+Lien LinkedIn :
+https://www.linkedin.com/in/raphael-cassard-b6224b32a
+
+Lien Portfolio / Site web :
+https://cass54.github.io/Portfolio-Cassard-Raphael/
+
+Lien GitHub :
+https://github.com/Cass54
+
+
+--------------------------------------------------------------------------------
+2. RÉSUMÉ DU PROFIL / PROFIL PROFESSIONNEL ("ABOUT ME" / "SUMMARY")
+--------------------------------------------------------------------------------
+
+[Version standard - ~60 mots] :
+Élève-ingénieur en 2e année à l'ENSEEIHT (Toulouse INP), spécialisé en Télécommunications et Électronique RF (circuits hyperfréquences, modélisation et mesure d'antennes). Fort d'une expérience en laboratoire sur la conception et la mesure d'antennes 4.0 GHz sous HFSS et VNA, je recherche un stage de fin d'études / césure en conception et caractérisation RF & antennes.
+
+[Version détaillée - ~100 mots] :
+Actuellement élève-ingénieur à l'ENSEEIHT (Toulouse INP) au sein de la filière SysCom, je me spécialise en conception RF, antennes et circuits hyperfréquences. Passionné par l'électromagnétisme appliqué, j'ai développé des compétences concrètes allant de la simulation électromagnétique (Ansys HFSS, Keysight ADS) à la fabrication et la caractérisation expérimentale (VNA, bancs de mesure). Rigoureux, curieux et habitué au travail d'équipe, je souhaite mettre en pratique mes compétences en R&D dans le domaine des systèmes sans fil et de la connectivité automobile.
+
+
+--------------------------------------------------------------------------------
+3. EXPÉRIENCES PROFESSIONNELLES (WORK EXPERIENCE)
+--------------------------------------------------------------------------------
+
+=== EXPÉRIENCE 1 : Stage Recherche RF & Antennes (USFQ) ===
+
+Intitulé du poste :
+Stagiaire Recherche — Conception, Prototypage CNC & Mesures RF d'Antenne 4.0 GHz
+
+Intitulé court :
+Stagiaire Recherche Électronique RF & Antennes
+
+Nom de l'entreprise / organisme :
+Universidad San Francisco de Quito (USFQ)
+
+Type d'emploi :
+Stage (Internship)
+
+Lieu :
+Cumbayá / Quito, Équateur
+
+Période :
+Juin 2026 – Août 2026
+
+Mois / Année début :
+06/2026 (Juin 2026)
+
+Mois / Année fin :
+08/2026 (Août 2026)
+
+Description du poste (Format paragraphe continu) :
+Conception, simulation et fabrication d'une antenne patch large bande opérant à 4.0 GHz sur substrat FR-4 pour banc SDR. Modélisation et optimisation électromagnétique 3D sous Ansys HFSS avec résonateur parasite à couplage capacitif. Réalisation physique en laboratoire par usinage CNC (KiCad, FlatCAM), gravure chimique au FeCl₃ et soudure SMA. Caractérisation RF complète sur analyseur de réseau vectoriel (VNA) validant une bande passante de 370 MHz à -10 dB (cible >= 200 MHz). Conception d'un banc de mesure 2D automatisé sur mesure pour le relevé des diagrammes de rayonnement.
+
+Description du poste (Format liste à puces) :
+• Modélisation et simulation sous Ansys HFSS d'une antenne patch large bande à 4.0 GHz (couplage capacitif avec résonateur parasite) sur substrat FR-4 pour banc SDR (ToA/AoA).
+• Fabrication en laboratoire : gravure chimique FeCl₃, usinage CNC (KiCad, FlatCAM), montage et soudure de connecteurs SMA.
+• Caractérisation RF sur Analyseur de Réseau Vectoriel (VNA) : validation d'une bande passante mesurée de 370 MHz (9,25 %) à -10 dB pour une cible initiale >= 200 MHz.
+• Conception et mise en œuvre d'un banc de test 2D sur mesure pour le relevé expérimental des diagrammes de rayonnement en champ lointain.
+• Analyse des écarts mesures / simulations et rédaction du rapport technique en anglais et espagnol.
+
+Mots-clés / Compétences utilisées :
+HFSS, VNA, Mesures RF, Antennes patch, KiCad, FlatCAM, Prototypage CNC, Électromagnétisme, SDR
+
+
+=== EXPÉRIENCE 2 : Maintenance Industrielle (RMI) ===
+
+Intitulé du poste :
+Mécanicien de Maintenance Industrielle
+
+Nom de l'entreprise :
+Rénovation Machines Industrielles (RMI)
+
+Type d'emploi :
+Saisonnier / CDD
+
+Lieu :
+Nomeny, France
+
+Période :
+Juin 2025 – Août 2025
+
+Mois / Année début :
+06/2025 (Juin 2025)
+
+Mois / Année fin :
+08/2025 (Août 2025)
+
+Description du poste (Format paragraphe continu) :
+Intervention en atelier et sur sites industriels pour la maintenance préventive et curative d'équipements mécaniques et électromécaniques lourds. Démontage, diagnostic d'avarie, réparation et réglage de machines de production. Travail en autonomie dans le respect strict des consignes de sécurité en environnement industriel exigeant.
+
+Description du poste (Format liste à puces) :
+• Maintenance préventive et corrective sur des parcs de machines industrielles variés en atelier et sur site client.
+• Diagnostic de dysfonctionnements mécaniques, remplacement de pièces d'usure et remise en service opérationnelle.
+• Développement d'une grande rigueur opérationnelle, adaptabilité et autonomie technique en milieu industriel.
+
+Mots-clés / Compétences utilisées :
+Maintenance mécanique, Diagnostic de pannes, Sécurité industrielle, Rigueur, Autonomie
+
+
+=== EXPÉRIENCE 3 : Maintenance Biomédicale (Quipment) ===
+
+Intitulé du poste :
+Opérateur de Maintenance Biomédicale
+
+Nom de l'entreprise :
+Quipment
+
+Type d'emploi :
+Saisonnier / Stage découverte
+
+Lieu :
+Nancy, France
+
+Période :
+Août 2023 – Septembre 2023
+
+Mois / Année début :
+08/2023 (Août 2023)
+
+Mois / Année fin :
+09/2023 (Septembre 2023)
+
+Description du poste :
+Maintenance préventive, étalonnage métrologique et configuration de dispositifs médicaux et de monitoring selon les exigences réglementaires et cliniques. Traçabilité des opérations de contrôle qualité et rédaction des fiches de conformité.
+
+Mots-clés / Compétences utilisées :
+Métrologie, Contrôle qualité, Dispositifs médicaux, Procédures normatives
+
+
+--------------------------------------------------------------------------------
+4. FORMATION (EDUCATION)
+--------------------------------------------------------------------------------
+
+=== FORMATION 1 : ENSEEIHT (Toulouse INP) ===
+
+Établissement / École :
+ENSEEIHT (Toulouse INP)
+
+Type d'établissement :
+Grande École d'Ingénieurs
+
+Diplôme / Grade :
+Diplôme d'Ingénieur 3EA-SysCom (Grade de Master / Bac+5)
+
+Domaine d'études / Spécialisation :
+3EA-SysCom — Électronique RF, Antennes & Hyperfréquences
+
+Lieu :
+Toulouse, France
+
+Date de début :
+09/2024 (Septembre 2024)
+
+Date de fin (prévue) :
+09/2027 (Septembre 2027)
+
+Poste actuel / En cours d'études :
+Oui
+
+Description / Cours suivis :
+Formation d'ingénieur d'excellence en systèmes de communication et électronique haute fréquence.
+Matières principales : Circuits hyperfréquences, modélisation électromagnétique, antennes planaires & ouvertures rayonnantes, MMIC, MEMS, radar, CEM, électronique analogique et numérique, traitement du signal et mesures RF.
+
+
+=== FORMATION 2 : Synopsys Training ===
+
+Établissement / Organisme :
+Synopsys
+
+Diplôme / Certification :
+Formation intensive Design ASIC & CPU
+
+Domaine d'études :
+Microélectronique / Conception de circuits numériques
+
+Date :
+07/2026 (Juillet 2026)
+
+Description :
+Flow complet Synopsys (Design Compiler, VCS, ICC2) et conception matérielle d'une architecture CPU et mémoire SRAM en langage Verilog.
+
+
+=== FORMATION 3 : CPGE Lycée Henri Poincaré ===
+
+Établissement :
+Lycée Henri Poincaré
+
+Diplôme :
+Classes Préparatoires aux Grandes Écoles (CPGE) — Bac+2
+
+Domaine d'études :
+Filière PCSI puis PC* (Physique, Chimie, Mathématiques)
+
+Lieu :
+Nancy, France
+
+Date de début :
+09/2022 (Septembre 2022)
+
+Date de fin :
+07/2024 (Juillet 2024)
+
+Description :
+Formation scientifique d'excellence et préparation intensive aux concours d'entrée aux Grandes Écoles d'Ingénieurs (Mines-Ponts, Centrale-Supélec, CCINP). Solides bases en physique ondulatoire, électromagnétisme, mathématiques appliquées et thermodynamique.
+
+
+=== FORMATION 4 : Lycée Marquette ===
+
+Établissement :
+Lycée Marquette
+
+Diplôme :
+Baccalauréat Général Scientifique — Mention Très Bien
+
+Lieu :
+Pont-à-Mousson, France
+
+Date de début :
+09/2019
+
+Date de fin :
+07/2022
+
+Description :
+Spécialités Mathématiques & Physique-Chimie, Option Mathématiques Expertes, Section Européenne Anglais. Mention Très Bien.
+
+
+--------------------------------------------------------------------------------
+5. PROJETS ACADÉMIQUES & TECHNIQUES (PROJECTS)
+--------------------------------------------------------------------------------
+
+=== Projet 1 : Amplificateur Hyperfréquence 5.2 GHz & Émetteur Radio ===
+• Rôle / Contexte : Projet académique ENSEEIHT (2A)
+• Outils : Keysight ADS, Momentum, Analyseur de réseau (VNA)
+• Description : Conception complète d'un amplificateur haute fréquence à 5.2 GHz pour émetteur radio. Sélection des composants, adaptation d'impédance, dessin du circuit imprimé RF (layout) et simulation électromagnétique 2.5D sous Momentum.
+
+=== Projet 2 : Antennes Cornet & Patch pour Faisceau Hertzien 10 GHz ===
+• Rôle / Contexte : Bureau d'Études ENSEEIHT (2A)
+• Outils : Ansys HFSS, MATLAB, Substrat Rogers RO4003
+• Description : Conception et simulation sous Ansys HFSS d'une antenne d'ouverture rayonnante (cornet) et d'un patch imprimé sur substrat Rogers à 10 GHz. Extraction des diagrammes de rayonnement 3D et calcul complet du bilan de liaison sous MATLAB.
+
+=== Projet 3 : Modélisation Électromagnétique de Structure Guidante (HFSS / MATLAB) ===
+• Rôle / Contexte : Projet Électromagnétisme Numérique ENSEEIHT (2A)
+• Outils : Schémas équivalents, MATLAB, Ansys HFSS 3D
+• Description : Résolution analytique de l'équation de dispersion d'une structure guidante blindée par la méthode des schémas équivalents. Calcul numérique sous MATLAB et validation de la courbe de dispersion par simulation 3D sous Ansys HFSS.
+
+=== Projet 4 : Liaison Audio FM Optoélectronique — Émetteur & Récepteur (PSpice) ===
+• Rôle / Contexte : Projet Conception Analogique & RF ENSEEIHT (2A)
+• Outils : PSpice, Oscillateur VCO, Boucle PLL, Étage Cascode sélectif, Filtre Sallen-Key
+• Description : Dimensionnement et réalisation expérimentale d'une chaîne audio FM optique complète : modulation par VCO, démodulation par PLL, amplification analogique par étage Cascode sélectif et filtrage actif de Sallen-Key.
+
+
+--------------------------------------------------------------------------------
+6. COMPÉTENCES TECHNIQUES (SKILLS)
+--------------------------------------------------------------------------------
+
+[Format Tags / Mots-clés séparés par des virgules (idéal pour copier-coller dans les champs de compétences)] :
+Électronique RF, Hyperfréquences, Antennes, Électromagnétisme, Modélisation électromagnétique, MMIC, MEMS, Conception d'antennes, Simulation électromagnétique, HFSS, ADS (Keysight), Momentum, VNA (Vector Network Analyzer), Analyseur de réseau, Analyseur de spectre, Mesures RF, Adaptation d'impédance, Guides d'ondes, CEM, Radar, MATLAB, Simulink, Python, C, C++, VHDL, Verilog, Vivado, Orcad PSpice, KiCad, Microcontrôleurs, Traitement du signal, Métrologie
+
+[Compétences par catégories] :
+• Électronique Haute Fréquence & RF :
+  Conception et modélisation d'antennes (patch, réseaux), Modélisation électromagnétique, Circuits hyperfréquences (microstrip, coupleurs, amplificateurs), MMIC, MEMS, Adaptation d'impédance (abaque de Smith), Lignes de transmission, Guides d'ondes, Compatibilité Électromagnétique (CEM), Radar.
+
+• Instrumentation & Mesures de Laboratoire :
+  Analyseur de réseau vectoriel (VNA), Analyseur de spectre, Banc de mesure 2D de diagrammes de rayonnement, Puissancemètre RF (Power meter), Oscilloscope numérique, Générateur HF, Analyseur logique.
+
+• Logiciels de CAO & Simulation :
+  ANSYS HFSS, Keysight ADS (Advanced Design System & Momentum), Orcad PSpice, Xilinx Vivado, Intel Quartus, KiCad, FlatCAM, Synopsys (Design Compiler, VCS, ICC2), MPLAB X.
+
+• Programmation & Traitement des Données :
+  MATLAB & Simulink, Python (NumPy, SciPy, Matplotlib), C, C++, VHDL, Verilog.
+
+• Méthodes, Qualité & Métrologie :
+  Corrélation mesures/simulations, Définition de plans d'expériences (DOE), Analyse de systèmes de mesure (MSA), Analyses statistiques (ANOVA), Traitement du signal et post-traitement de données.
+
+• Soft Skills / Savoir-être :
+  Rigueur technique, Autonomie, Esprit d'équipe, Aisance relationnelle, Capacité de synthèse et documentation technique, Gestion de projet et coordination d'équipe (70 personnes).
+
+
+--------------------------------------------------------------------------------
+7. LANGUES (LANGUAGES)
+--------------------------------------------------------------------------------
+
+Langue 1 :
+• Langue : Français
+• Niveau : Langue maternelle / Bilingue (Native)
+
+Langue 2 :
+• Langue : Anglais
+• Niveau : Courant / Professionnel (B2+ Certifié Cambridge)
+• Utilisation : Maîtrise de l'anglais technique (lecture de standards internationaux, documentation, rédaction de rapports techniques).
+
+Langue 3 :
+• Langue : Italien
+• Niveau : Notions intermédiaires (A2 / B1)
+
+
+--------------------------------------------------------------------------------
+8. ENGAGEMENT ASSOCIATIF & CENTRES D'INTÉRÊT
+--------------------------------------------------------------------------------
+
+• Vice-Président de liste de campagne BDE (2024 – 2025) :
+  Management et coordination d'une équipe de 70 personnes, gestion d'un budget prévisionnel > 15 000 €, planification et logistique des événements majeurs de l'école.
+
+• Responsable Afterworks — AE ENSEEIHT (2025 – 2026) :
+  Organisation hebdomadaire des soirées au bar associatif ("Foyer") et animation de la cohésion étudiante.
+
+• Centres d'intérêt :
+  - Natation de compétition : Pratique en club au niveau Régional (goût de l'effort, discipline, régularité).
+  - Musique : Guitare électrique (8 ans de pratique).
+
+
+--------------------------------------------------------------------------------
+9. MESSAGE D'ACCOMPAGNEMENT / LETTRE DE MOTIVATION COURTE
+   (Optimisé pour le poste Aumovio : Ingénieur électronique antennes RF - Réf REF12641C)
+--------------------------------------------------------------------------------
+
+Madame, Monsieur,
+
+Actuellement élève-ingénieur en 2e année à l'ENSEEIHT (Toulouse INP), au sein de la filière SysCom, je vous adresse avec un vif enthousiasme ma candidature pour le stage « Ingénieur électronique antennes radiofréquences (H/F) » au sein de votre équipe Wireless Communication à Toulouse.
+
+Mon cursus m'apporte des bases approfondies en électromagnétisme appliqué, en circuits hyperfréquences et en conception d'antennes. Lors de mon précédent stage de recherche à l'Universidad San Francisco de Quito, j'ai modélisé, simulé sous Ansys HFSS et caractérisé expérimentalement sur VNA une antenne patch large bande à 4.0 GHz, concevant également un banc de test 2D sur mesure pour le relevé des diagrammes de rayonnement. Cette expérience m'a familiarisé avec la corrélation indispensable entre mesures réelles et simulations électromagnétiques.
+
+Par ailleurs, la pratique régulière de Python et MATLAB pour l'automatisation de mesures, ainsi que l'utilisation d'outils tels qu'ADS et les analyseurs de spectre/réseau, me permettront d'être rapidement opérationnel sur vos bancs de mesures en champ proche, les analyses statistiques (MSA, ANOVA) et les évaluations DAS.
+
+Rejoindre Aumovio représente pour moi une opportunité unique de contribuer à la sécurité et à la connectivité de la mobilité de demain au sein d'une équipe experte.
+
+Je reste à votre entière disposition pour un entretien afin de vous exposer plus en détail ma motivation.
+
+Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+Raphaël Cassard
+(+33) 6 22 03 99 61
+cassardraph@gmail.com
+Portfolio : https://cass54.github.io/Portfolio-Cassard-Raphael/
+LinkedIn : https://www.linkedin.com/in/raphael-cassard-b6224b32a
